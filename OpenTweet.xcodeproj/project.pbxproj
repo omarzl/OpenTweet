@@ -15,6 +15,10 @@
 		807629E82C3A02DD007C91ED /* OpenTweetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807629E72C3A02DD007C91ED /* OpenTweetTests.swift */; };
 		807629F22C3A02DD007C91ED /* OpenTweetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807629F12C3A02DD007C91ED /* OpenTweetUITests.swift */; };
 		807629F42C3A02DD007C91ED /* OpenTweetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807629F32C3A02DD007C91ED /* OpenTweetUITestsLaunchTests.swift */; };
+		80CD93C22C3A067D007858DE /* NetworkingService.docc in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93C12C3A067D007858DE /* NetworkingService.docc */; };
+		80CD93C82C3A067E007858DE /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93BE2C3A067D007858DE /* NetworkingService.framework */; };
+		80CD93CD2C3A067E007858DE /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93CC2C3A067E007858DE /* NetworkingServiceTests.swift */; };
+		80CD93CE2C3A067E007858DE /* NetworkingService.h in Headers */ = {isa = PBXBuildFile; fileRef = 80CD93C02C3A067D007858DE /* NetworkingService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,13 @@
 			remoteGlobalIDString = 807629CF2C3A02DC007C91ED;
 			remoteInfo = OpenTweet;
 		};
+		80CD93C92C3A067E007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD93BD2C3A067D007858DE;
+			remoteInfo = NetworkingService;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +58,11 @@
 		807629ED2C3A02DD007C91ED /* OpenTweetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTweetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		807629F12C3A02DD007C91ED /* OpenTweetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetUITests.swift; sourceTree = "<group>"; };
 		807629F32C3A02DD007C91ED /* OpenTweetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		80CD93BE2C3A067D007858DE /* NetworkingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD93C02C3A067D007858DE /* NetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingService.h; sourceTree = "<group>"; };
+		80CD93C12C3A067D007858DE /* NetworkingService.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NetworkingService.docc; sourceTree = "<group>"; };
+		80CD93C72C3A067E007858DE /* NetworkingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD93CC2C3A067E007858DE /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD93BB2C3A067D007858DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD93C42C3A067E007858DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD93C82C3A067E007858DE /* NetworkingService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +111,8 @@
 				807629D22C3A02DC007C91ED /* OpenTweet */,
 				807629E62C3A02DD007C91ED /* OpenTweetTests */,
 				807629F02C3A02DD007C91ED /* OpenTweetUITests */,
+				80CD93BF2C3A067D007858DE /* NetworkingService */,
+				80CD93CB2C3A067E007858DE /* NetworkingServiceTests */,
 				807629D12C3A02DC007C91ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +123,8 @@
 				807629D02C3A02DC007C91ED /* OpenTweet.app */,
 				807629E32C3A02DD007C91ED /* OpenTweetTests.xctest */,
 				807629ED2C3A02DD007C91ED /* OpenTweetUITests.xctest */,
+				80CD93BE2C3A067D007858DE /* NetworkingService.framework */,
+				80CD93C72C3A067E007858DE /* NetworkingServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +167,35 @@
 			path = OpenTweetUITests;
 			sourceTree = "<group>";
 		};
+		80CD93BF2C3A067D007858DE /* NetworkingService */ = {
+			isa = PBXGroup;
+			children = (
+				80CD93C02C3A067D007858DE /* NetworkingService.h */,
+				80CD93C12C3A067D007858DE /* NetworkingService.docc */,
+			);
+			path = NetworkingService;
+			sourceTree = "<group>";
+		};
+		80CD93CB2C3A067E007858DE /* NetworkingServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				80CD93CC2C3A067E007858DE /* NetworkingServiceTests.swift */,
+			);
+			path = NetworkingServiceTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		80CD93B92C3A067D007858DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD93CE2C3A067E007858DE /* NetworkingService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		807629CF2C3A02DC007C91ED /* OpenTweet */ = {
@@ -188,6 +251,42 @@
 			productReference = 807629ED2C3A02DD007C91ED /* OpenTweetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		80CD93BD2C3A067D007858DE /* NetworkingService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CD93D32C3A067E007858DE /* Build configuration list for PBXNativeTarget "NetworkingService" */;
+			buildPhases = (
+				80CD93B92C3A067D007858DE /* Headers */,
+				80CD93BA2C3A067D007858DE /* Sources */,
+				80CD93BB2C3A067D007858DE /* Frameworks */,
+				80CD93BC2C3A067D007858DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkingService;
+			productName = NetworkingService;
+			productReference = 80CD93BE2C3A067D007858DE /* NetworkingService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		80CD93C62C3A067E007858DE /* NetworkingServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CD93D42C3A067E007858DE /* Build configuration list for PBXNativeTarget "NetworkingServiceTests" */;
+			buildPhases = (
+				80CD93C32C3A067E007858DE /* Sources */,
+				80CD93C42C3A067E007858DE /* Frameworks */,
+				80CD93C52C3A067E007858DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80CD93CA2C3A067E007858DE /* PBXTargetDependency */,
+			);
+			name = NetworkingServiceTests;
+			productName = NetworkingServiceTests;
+			productReference = 80CD93C72C3A067E007858DE /* NetworkingServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,6 +308,12 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 807629CF2C3A02DC007C91ED;
 					};
+					80CD93BD2C3A067D007858DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					80CD93C62C3A067E007858DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
 				};
 			};
 			buildConfigurationList = 807629CB2C3A02DC007C91ED /* Build configuration list for PBXProject "OpenTweet" */;
@@ -227,6 +332,8 @@
 				807629CF2C3A02DC007C91ED /* OpenTweet */,
 				807629E22C3A02DD007C91ED /* OpenTweetTests */,
 				807629EC2C3A02DD007C91ED /* OpenTweetUITests */,
+				80CD93BD2C3A067D007858DE /* NetworkingService */,
+				80CD93C62C3A067E007858DE /* NetworkingServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +356,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		807629EB2C3A02DD007C91ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD93BC2C3A067D007858DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD93C52C3A067E007858DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,6 +406,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD93BA2C3A067D007858DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD93C22C3A067D007858DE /* NetworkingService.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD93C32C3A067E007858DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD93CD2C3A067E007858DE /* NetworkingServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -297,6 +434,11 @@
 			isa = PBXTargetDependency;
 			target = 807629CF2C3A02DC007C91ED /* OpenTweet */;
 			targetProxy = 807629EE2C3A02DD007C91ED /* PBXContainerItemProxy */;
+		};
+		80CD93CA2C3A067E007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD93BD2C3A067D007858DE /* NetworkingService */;
+			targetProxy = 80CD93C92C3A067E007858DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -581,6 +723,118 @@
 			};
 			name = Release;
 		};
+		80CD93CF2C3A067E007858DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omarzl.NetworkingService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		80CD93D02C3A067E007858DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omarzl.NetworkingService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		80CD93D12C3A067E007858DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.omarzl.NetworkingServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80CD93D22C3A067E007858DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.omarzl.NetworkingServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -616,6 +870,24 @@
 			buildConfigurations = (
 				807629FE2C3A02DD007C91ED /* Debug */,
 				807629FF2C3A02DD007C91ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CD93D32C3A067E007858DE /* Build configuration list for PBXNativeTarget "NetworkingService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CD93CF2C3A067E007858DE /* Debug */,
+				80CD93D02C3A067E007858DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CD93D42C3A067E007858DE /* Build configuration list for PBXNativeTarget "NetworkingServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CD93D12C3A067E007858DE /* Debug */,
+				80CD93D22C3A067E007858DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
