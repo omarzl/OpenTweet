@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TweetTimelineView: View {
+    
+    let viewModel = TweetTimelineViewModel()
+    
     var body: some View {
         Text("hello")
     }

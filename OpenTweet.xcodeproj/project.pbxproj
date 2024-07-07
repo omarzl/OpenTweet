@@ -42,6 +42,9 @@
 		80CD94502C3B227D007858DE /* TweetTimelineFeatureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */; };
 		80CD945A2C3B22B3007858DE /* libTweetTimelineFeatureInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */; };
 		80CD945C2C3B2341007858DE /* OpenTweetModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD945B2C3B2341007858DE /* OpenTweetModelContainer.swift */; };
+		80CD945E2C3B24A1007858DE /* TweetTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD945D2C3B24A1007858DE /* TweetTimelineViewModel.swift */; };
+		80CD94602C3B24EF007858DE /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD945F2C3B24EF007858DE /* Timeline.swift */; };
+		80CD94622C3B2571007858DE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94612C3B2571007858DE /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +243,9 @@
 		80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetTimelineFeatureInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineFeatureInterface.swift; sourceTree = "<group>"; };
 		80CD945B2C3B2341007858DE /* OpenTweetModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetModelContainer.swift; sourceTree = "<group>"; };
+		80CD945D2C3B24A1007858DE /* TweetTimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineViewModel.swift; sourceTree = "<group>"; };
+		80CD945F2C3B24EF007858DE /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		80CD94612C3B2571007858DE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				80CD93D72C3A08D2007858DE /* NetworkingError.swift */,
+				80CD94612C3B2571007858DE /* Endpoint.swift */,
 				80CD940B2C3A1F56007858DE /* Networking.swift */,
 				80CD94172C3A2079007858DE /* NetworkRequest.swift */,
 			);
@@ -465,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				80CD942B2C3B1B36007858DE /* Tweet.swift */,
+				80CD945F2C3B24EF007858DE /* Timeline.swift */,
 			);
 			path = TweetFoundation;
 			sourceTree = "<group>";
@@ -475,6 +483,7 @@
 				80CD94362C3B1E80007858DE /* TweetTimelineFeature.swift */,
 				80CD943F2C3B1F84007858DE /* TweetTimelineRepository.swift */,
 				80CD943B2C3B1EAD007858DE /* TweetTimelineView.swift */,
+				80CD945D2C3B24A1007858DE /* TweetTimelineViewModel.swift */,
 			);
 			path = TweetTimelineFeature;
 			sourceTree = "<group>";
@@ -913,6 +922,7 @@
 			files = (
 				80CD94112C3A1F81007858DE /* NetworkingError.swift in Sources */,
 				80CD94182C3A2079007858DE /* NetworkRequest.swift in Sources */,
+				80CD94622C3B2571007858DE /* Endpoint.swift in Sources */,
 				80CD940C2C3A1F56007858DE /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -921,6 +931,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CD94602C3B24EF007858DE /* Timeline.swift in Sources */,
 				80CD942C2C3B1B36007858DE /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,6 +943,7 @@
 				80CD94372C3B1E80007858DE /* TweetTimelineFeature.swift in Sources */,
 				80CD943C2C3B1EAD007858DE /* TweetTimelineView.swift in Sources */,
 				80CD94402C3B1F85007858DE /* TweetTimelineRepository.swift in Sources */,
+				80CD945E2C3B24A1007858DE /* TweetTimelineViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

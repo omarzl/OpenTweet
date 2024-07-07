@@ -14,6 +14,7 @@ struct OpenTweetModelContainer {
     let container: ModelContainer = {
         let schema = Schema([
             Tweet.self,
+            Timeline.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
