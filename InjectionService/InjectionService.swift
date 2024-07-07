@@ -38,4 +38,9 @@ public final class InjectionServiceImpl {
     public func resolve<Registrable>(registrable: Registrable.Type) -> Registrable? {
         registrables[String(describing: registrable)]?() as? Registrable
     }
+    
+    /// Cleans all registered protocols
+    public func cleanAll() {
+        registrables.removeAll()
+    }
 }
