@@ -1,13 +1,8 @@
 # ``NetworkingService``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+This framework is built statically and it is responsible of making network requests to a REST API.
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
-
-## Topics
-
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
-
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+The class `NetworkService` is a HTTP wrapper.
+The enum `NetworkingError` defines the possible errors.
