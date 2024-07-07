@@ -7,9 +7,14 @@
 
 import SwiftUI
 import SwiftData
+import InjectionService
+import TweetTimelineFeature
 
 @main
 struct OpenTweetApp: App {
+    
+    @Inject
+    var timelineFeature: (any TweetTimelineFeatureInterface)?
     
     init() {
         Registrables().register()
@@ -30,7 +35,9 @@ struct OpenTweetApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if let view = timelineFeature?.view() {
+                AnyView(view)
+            }
         }
         .modelContainer(sharedModelContainer)
     }
