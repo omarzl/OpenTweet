@@ -15,20 +15,30 @@ struct TweetTimelineView: View {
     private var viewModel = TweetTimelineViewModel()
     
     var body: some View {
-        List {
-            ForEach(viewModel.tweets) { tweet in
-                VStack {
-                    HStack() {
-                        avatarViewFor(tweet: tweet)
-                        VStack {
-                            HStack {
-                                authorViewFor(tweet: tweet)
+        NavigationView {
+            List {
+                ForEach(viewModel.tweets) { tweet in
+                    VStack {
+                        HStack() {
+                            avatarViewFor(tweet: tweet)
+                            VStack {
+                                HStack {
+                                    authorViewFor(tweet: tweet)
+                                }
+                                contentViewFor(tweet: tweet)
                             }
-                            contentViewFor(tweet: tweet)
                         }
                     }
                 }
+                .listRowSeparatorTint(.blue, edges: .all)
+                .frame( maxWidth: .infinity)
+                .edgesIgnoringSafeArea(.horizontal)
             }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .background(Color.clear.edgesIgnoringSafeArea(.all))
+            .navigationTitle("OpenTweet")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear {
             viewModel.refresh()
