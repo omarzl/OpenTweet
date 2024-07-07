@@ -10,6 +10,11 @@ import SwiftData
 
 @main
 struct OpenTweetApp: App {
+    
+    init() {
+        Registrables().register()
+    }
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
