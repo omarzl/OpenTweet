@@ -6,10 +6,19 @@
 //
 
 import XCTest
+import Combine
 @testable import NetworkingService
 import NetworkingServiceInterface
+import InjectionService
 
 final class NetworkingServiceTests: XCTestCase {
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    override func tearDown() {
+        super.tearDown()
+        InjectionServiceImpl.instance.cleanAll()
+    }
 
     func testGetRequest() async throws {
         // given
@@ -32,6 +41,50 @@ final class NetworkingServiceTests: XCTestCase {
             // then
             XCTAssertNotNil(error as? NetworkingError)
         }
+    }
+    
+    func testPropertyWrapperExpectError() {
+        // given
+        var expectedError: Error?
+        @NetworkRequest(url: "")
+        var request: AnyPublisher<ModelMock, any Error>
+        // when
+        request.sink { completion in
+            switch completion {
+            case .finished:
+                XCTAssert(false, "Expected an error")
+            case .failure(let error):
+                expectedError = error
+            }
+        } receiveValue: { _ in }
+            .store(in: &cancellables)
+        // then
+        XCTAssertNotNil(expectedError as? InjectionError)
+    }
+    
+    func testPropertyWrapperExpectSuccess() {
+        // given
+        let expectation = expectation(description: "Expected a result")
+        var finishedCall = false
+        InjectionServiceImpl.instance.register(registrable: Networking.self) {
+            NetworkingServiceImpl(requester: NetworkingRequesterMock(mock: ModelMock()))
+        }
+        @NetworkRequest(url: "https://mock.com")
+        var request: AnyPublisher<ModelMock, any Error>
+        // when
+        request.sink { completion in
+            switch completion {
+            case .finished:
+                finishedCall = true
+            case .failure(let error):
+                XCTAssert(false, "Expected no error: \(error)")
+            }
+        expectation.fulfill()
+        } receiveValue: { _ in }
+            .store(in: &cancellables)
+        // then
+        waitForExpectations(timeout: 0.1)
+        XCTAssert(finishedCall)
     }
 }
 

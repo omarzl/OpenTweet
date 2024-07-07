@@ -18,6 +18,8 @@ import InjectionService
 /// ```
 @propertyWrapper public struct NetworkRequest<Model: Decodable> {
     
+    // MARK: - Public properties
+    
     public var wrappedValue: AnyPublisher<Model, any Error> {
         get {
             Future { future in
@@ -40,9 +42,15 @@ import InjectionService
         }
     }
     
+    // MARK: - Private properties
+    
     private let url: String
     
-    init(url: String) {
+    // MARK: - Init
+    
+    /// Initializes the property wrapper
+    /// - Parameter url: URL to be requested
+    public init(url: String) {
         self.url = url
     }
 }

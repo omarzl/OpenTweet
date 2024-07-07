@@ -10,7 +10,7 @@ import OSLog
 import NetworkingServiceInterface
 
 /// Responsible of sending networking requests
-final public class NetworkingServiceImpl {
+final public class NetworkingServiceImpl: Networking {
     
     // MARK: - Private properties
     
