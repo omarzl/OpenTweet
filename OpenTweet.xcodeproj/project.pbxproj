@@ -50,6 +50,10 @@
 		80CD94792C3B5C22007858DE /* OTDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94782C3B5C22007858DE /* OTDateFormatter.swift */; };
 		80CD947B2C3B5C3F007858DE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD947A2C3B5C3F007858DE /* ViewModifiers.swift */; };
 		80CD947E2C3B5C7E007858DE /* libTweetUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD946B2C3B5B4C007858DE /* libTweetUI.a */; };
+		80CD94862C3B5DF3007858DE /* TweetThreadFeatureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94852C3B5DF3007858DE /* TweetThreadFeatureInterface.swift */; };
+		80CD94912C3B5DFC007858DE /* TweetThreadFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94902C3B5DFC007858DE /* TweetThreadFeature.swift */; };
+		80CD94992C3B5E0D007858DE /* libTweetThreadFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD948E2C3B5DFC007858DE /* libTweetThreadFeature.a */; };
+		80CD949A2C3B5E0D007858DE /* libTweetThreadFeatureInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94832C3B5DF3007858DE /* libTweetThreadFeatureInterface.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +183,20 @@
 			remoteGlobalIDString = 80CD946A2C3B5B4C007858DE;
 			remoteInfo = TweetUI;
 		};
+		80CD94952C3B5E08007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD948D2C3B5DFC007858DE;
+			remoteInfo = TweetThreadFeature;
+		};
+		80CD94972C3B5E08007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD94822C3B5DF3007858DE;
+			remoteInfo = TweetThreadFeatureInterface;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -238,6 +256,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD94812C3B5DF3007858DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD948C2C3B5DFC007858DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -286,6 +322,10 @@
 		80CD946D2C3B5B4C007858DE /* TweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
 		80CD94782C3B5C22007858DE /* OTDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDateFormatter.swift; sourceTree = "<group>"; };
 		80CD947A2C3B5C3F007858DE /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		80CD94832C3B5DF3007858DE /* libTweetThreadFeatureInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetThreadFeatureInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD94852C3B5DF3007858DE /* TweetThreadFeatureInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetThreadFeatureInterface.swift; sourceTree = "<group>"; };
+		80CD948E2C3B5DFC007858DE /* libTweetThreadFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetThreadFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD94902C3B5DFC007858DE /* TweetThreadFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetThreadFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +333,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CD94992C3B5E0D007858DE /* libTweetThreadFeature.a in Frameworks */,
+				80CD949A2C3B5E0D007858DE /* libTweetThreadFeatureInterface.a in Frameworks */,
 				80CD947E2C3B5C7E007858DE /* libTweetUI.a in Frameworks */,
 				80CD945A2C3B22B3007858DE /* libTweetTimelineFeatureInterface.a in Frameworks */,
 				80CD94452C3B202A007858DE /* libTweetFoundation.a in Frameworks */,
@@ -383,6 +425,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD94802C3B5DF3007858DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD948B2C3B5DFC007858DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -402,6 +458,8 @@
 				80CD94352C3B1E80007858DE /* TweetTimelineFeature */,
 				80CD944E2C3B227D007858DE /* TweetTimelineFeatureInterface */,
 				80CD946C2C3B5B4C007858DE /* TweetUI */,
+				80CD94842C3B5DF3007858DE /* TweetThreadFeatureInterface */,
+				80CD948F2C3B5DFC007858DE /* TweetThreadFeature */,
 				807629D12C3A02DC007C91ED /* Products */,
 				80CD93DD2C3A0EDF007858DE /* Frameworks */,
 			);
@@ -422,6 +480,8 @@
 				80CD94342C3B1E80007858DE /* libTweetTimelineFeature.a */,
 				80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */,
 				80CD946B2C3B5B4C007858DE /* libTweetUI.a */,
+				80CD94832C3B5DF3007858DE /* libTweetThreadFeatureInterface.a */,
+				80CD948E2C3B5DFC007858DE /* libTweetThreadFeature.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -557,6 +617,22 @@
 			path = TweetUI;
 			sourceTree = "<group>";
 		};
+		80CD94842C3B5DF3007858DE /* TweetThreadFeatureInterface */ = {
+			isa = PBXGroup;
+			children = (
+				80CD94852C3B5DF3007858DE /* TweetThreadFeatureInterface.swift */,
+			);
+			path = TweetThreadFeatureInterface;
+			sourceTree = "<group>";
+		};
+		80CD948F2C3B5DFC007858DE /* TweetThreadFeature */ = {
+			isa = PBXGroup;
+			children = (
+				80CD94902C3B5DFC007858DE /* TweetThreadFeature.swift */,
+			);
+			path = TweetThreadFeature;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -589,6 +665,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				80CD94962C3B5E08007858DE /* PBXTargetDependency */,
+				80CD94982C3B5E08007858DE /* PBXTargetDependency */,
 				80CD947D2C3B5C7C007858DE /* PBXTargetDependency */,
 				80CD94592C3B22B1007858DE /* PBXTargetDependency */,
 				80CD94422C3B2025007858DE /* PBXTargetDependency */,
@@ -802,6 +880,40 @@
 			productReference = 80CD946B2C3B5B4C007858DE /* libTweetUI.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		80CD94822C3B5DF3007858DE /* TweetThreadFeatureInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CD94872C3B5DF3007858DE /* Build configuration list for PBXNativeTarget "TweetThreadFeatureInterface" */;
+			buildPhases = (
+				80CD947F2C3B5DF3007858DE /* Sources */,
+				80CD94802C3B5DF3007858DE /* Frameworks */,
+				80CD94812C3B5DF3007858DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TweetThreadFeatureInterface;
+			productName = TweetThreadFeatureInterface;
+			productReference = 80CD94832C3B5DF3007858DE /* libTweetThreadFeatureInterface.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		80CD948D2C3B5DFC007858DE /* TweetThreadFeature */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CD94922C3B5DFC007858DE /* Build configuration list for PBXNativeTarget "TweetThreadFeature" */;
+			buildPhases = (
+				80CD948A2C3B5DFC007858DE /* Sources */,
+				80CD948B2C3B5DFC007858DE /* Frameworks */,
+				80CD948C2C3B5DFC007858DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TweetThreadFeature;
+			productName = TweetThreadFeature;
+			productReference = 80CD948E2C3B5DFC007858DE /* libTweetThreadFeature.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -851,6 +963,12 @@
 					80CD946A2C3B5B4C007858DE = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					80CD94822C3B5DF3007858DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					80CD948D2C3B5DFC007858DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
 				};
 			};
 			buildConfigurationList = 807629CB2C3A02DC007C91ED /* Build configuration list for PBXProject "OpenTweet" */;
@@ -878,6 +996,8 @@
 				80CD94332C3B1E80007858DE /* TweetTimelineFeature */,
 				80CD944C2C3B227D007858DE /* TweetTimelineFeatureInterface */,
 				80CD946A2C3B5B4C007858DE /* TweetUI */,
+				80CD94822C3B5DF3007858DE /* TweetThreadFeatureInterface */,
+				80CD948D2C3B5DFC007858DE /* TweetThreadFeature */,
 			);
 		};
 /* End PBXProject section */
@@ -1051,6 +1171,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD947F2C3B5DF3007858DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD94862C3B5DF3007858DE /* TweetThreadFeatureInterface.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD948A2C3B5DFC007858DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD94912C3B5DFC007858DE /* TweetThreadFeature.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1144,6 +1280,16 @@
 			isa = PBXTargetDependency;
 			target = 80CD946A2C3B5B4C007858DE /* TweetUI */;
 			targetProxy = 80CD947C2C3B5C7C007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94962C3B5E08007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD948D2C3B5DFC007858DE /* TweetThreadFeature */;
+			targetProxy = 80CD94952C3B5E08007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94982C3B5E08007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD94822C3B5DF3007858DE /* TweetThreadFeatureInterface */;
+			targetProxy = 80CD94972C3B5E08007858DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1815,6 +1961,68 @@
 			};
 			name = Release;
 		};
+		80CD94882C3B5DF3007858DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80CD94892C3B5DF3007858DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80CD94932C3B5DFC007858DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80CD94942C3B5DFC007858DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1931,6 +2139,24 @@
 			buildConfigurations = (
 				80CD94702C3B5B4C007858DE /* Debug */,
 				80CD94712C3B5B4C007858DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CD94872C3B5DF3007858DE /* Build configuration list for PBXNativeTarget "TweetThreadFeatureInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CD94882C3B5DF3007858DE /* Debug */,
+				80CD94892C3B5DF3007858DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CD94922C3B5DFC007858DE /* Build configuration list for PBXNativeTarget "TweetThreadFeature" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CD94932C3B5DFC007858DE /* Debug */,
+				80CD94942C3B5DFC007858DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
