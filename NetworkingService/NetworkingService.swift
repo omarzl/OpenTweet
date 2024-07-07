@@ -7,6 +7,7 @@
 
 import Foundation
 import OSLog
+import NetworkingServiceInterface
 
 /// Responsible of sending networking requests
 final public class NetworkingServiceImpl {

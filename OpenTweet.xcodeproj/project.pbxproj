@@ -18,7 +18,6 @@
 		80CD93C82C3A067E007858DE /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93BE2C3A067D007858DE /* NetworkingService.framework */; };
 		80CD93CD2C3A067E007858DE /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93CC2C3A067E007858DE /* NetworkingServiceTests.swift */; };
 		80CD93D62C3A06B4007858DE /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93D52C3A06B4007858DE /* NetworkingService.swift */; };
-		80CD93D82C3A08D2007858DE /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93D72C3A08D2007858DE /* NetworkingError.swift */; };
 		80CD93DA2C3A0AFB007858DE /* NetworkingRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93D92C3A0AFB007858DE /* NetworkingRequesting.swift */; };
 		80CD93DC2C3A0CA5007858DE /* NetworkingRequesterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93DB2C3A0CA5007858DE /* NetworkingRequesterMock.swift */; };
 		80CD93DE2C3A0EDF007858DE /* NetworkingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93BE2C3A067D007858DE /* NetworkingService.framework */; platformFilter = ios; };
@@ -29,6 +28,8 @@
 		80CD93FC2C3A1500007858DE /* InjectionService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93E52C3A14FF007858DE /* InjectionService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80CD94042C3A1515007858DE /* InjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94032C3A1515007858DE /* InjectionService.swift */; };
 		80CD940C2C3A1F56007858DE /* NetworkingServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */; };
+		80CD94112C3A1F81007858DE /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93D72C3A08D2007858DE /* NetworkingError.swift */; };
+		80CD94162C3A1FD6007858DE /* libNetworkingServiceInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 80CD93E42C3A14FF007858DE;
 			remoteInfo = InjectionService;
+		};
+		80CD94122C3A1F96007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD94082C3A1F56007858DE;
+			remoteInfo = NetworkingServiceInterface;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -164,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CD94162C3A1FD6007858DE /* libNetworkingServiceInterface.a in Frameworks */,
 				80CD93C82C3A067E007858DE /* NetworkingService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +276,6 @@
 			children = (
 				80CD93D52C3A06B4007858DE /* NetworkingService.swift */,
 				80CD93D92C3A0AFB007858DE /* NetworkingRequesting.swift */,
-				80CD93D72C3A08D2007858DE /* NetworkingError.swift */,
 				80CD93C12C3A067D007858DE /* NetworkingService.docc */,
 			);
 			path = NetworkingService;
@@ -309,6 +317,7 @@
 		80CD940A2C3A1F56007858DE /* NetworkingServiceInterface */ = {
 			isa = PBXGroup;
 			children = (
+				80CD93D72C3A08D2007858DE /* NetworkingError.swift */,
 				80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */,
 			);
 			path = NetworkingServiceInterface;
@@ -401,6 +410,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				80CD94132C3A1F96007858DE /* PBXTargetDependency */,
 			);
 			name = NetworkingService;
 			productName = NetworkingService;
@@ -629,7 +639,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CD93DA2C3A0AFB007858DE /* NetworkingRequesting.swift in Sources */,
-				80CD93D82C3A08D2007858DE /* NetworkingError.swift in Sources */,
 				80CD93C22C3A067D007858DE /* NetworkingService.docc in Sources */,
 				80CD93D62C3A06B4007858DE /* NetworkingService.swift in Sources */,
 			);
@@ -665,6 +674,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CD94112C3A1F81007858DE /* NetworkingError.swift in Sources */,
 				80CD940C2C3A1F56007858DE /* NetworkingServiceInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +711,11 @@
 			isa = PBXTargetDependency;
 			target = 80CD93E42C3A14FF007858DE /* InjectionService */;
 			targetProxy = 80CD93F82C3A1500007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94132C3A1F96007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD94082C3A1F56007858DE /* NetworkingServiceInterface */;
+			targetProxy = 80CD94122C3A1F96007858DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1109,7 +1124,6 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7CEG7XS8U4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1146,7 +1160,6 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7CEG7XS8U4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1222,6 +1235,7 @@
 		80CD940E2C3A1F56007858DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CEG7XS8U4;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
@@ -1237,6 +1251,7 @@
 		80CD940F2C3A1F56007858DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CEG7XS8U4;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;

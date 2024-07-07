@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import NetworkingService
+import NetworkingServiceInterface
 
 final class NetworkingServiceTests: XCTestCase {
 
