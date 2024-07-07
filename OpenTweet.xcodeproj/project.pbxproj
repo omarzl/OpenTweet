@@ -28,6 +28,7 @@
 		80CD93FA2C3A1500007858DE /* InjectionService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93E52C3A14FF007858DE /* InjectionService.framework */; };
 		80CD93FC2C3A1500007858DE /* InjectionService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93E52C3A14FF007858DE /* InjectionService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80CD94042C3A1515007858DE /* InjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94032C3A1515007858DE /* InjectionService.swift */; };
+		80CD940C2C3A1F56007858DE /* NetworkingServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD94072C3A1F56007858DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +125,8 @@
 		80CD93EE2C3A1500007858DE /* InjectionServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InjectionServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CD93F52C3A1500007858DE /* InjectionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionServiceTests.swift; sourceTree = "<group>"; };
 		80CD94032C3A1515007858DE /* InjectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionService.swift; sourceTree = "<group>"; };
+		80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNetworkingServiceInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +183,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD94062C3A1F56007858DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -185,6 +204,7 @@
 				80CD93CB2C3A067E007858DE /* NetworkingServiceTests */,
 				80CD93E62C3A14FF007858DE /* InjectionService */,
 				80CD93F42C3A1500007858DE /* InjectionServiceTests */,
+				80CD940A2C3A1F56007858DE /* NetworkingServiceInterface */,
 				807629D12C3A02DC007C91ED /* Products */,
 				80CD93DD2C3A0EDF007858DE /* Frameworks */,
 			);
@@ -200,6 +220,7 @@
 				80CD93C72C3A067E007858DE /* NetworkingServiceTests.xctest */,
 				80CD93E52C3A14FF007858DE /* InjectionService.framework */,
 				80CD93EE2C3A1500007858DE /* InjectionServiceTests.xctest */,
+				80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,6 +304,14 @@
 				80CD93F52C3A1500007858DE /* InjectionServiceTests.swift */,
 			);
 			path = InjectionServiceTests;
+			sourceTree = "<group>";
+		};
+		80CD940A2C3A1F56007858DE /* NetworkingServiceInterface */ = {
+			isa = PBXGroup;
+			children = (
+				80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */,
+			);
+			path = NetworkingServiceInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +462,23 @@
 			productReference = 80CD93EE2C3A1500007858DE /* InjectionServiceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		80CD94082C3A1F56007858DE /* NetworkingServiceInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CD940D2C3A1F56007858DE /* Build configuration list for PBXNativeTarget "NetworkingServiceInterface" */;
+			buildPhases = (
+				80CD94052C3A1F56007858DE /* Sources */,
+				80CD94062C3A1F56007858DE /* Frameworks */,
+				80CD94072C3A1F56007858DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkingServiceInterface;
+			productName = NetworkingServiceInterface;
+			productReference = 80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -467,6 +513,9 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 807629CF2C3A02DC007C91ED;
 					};
+					80CD94082C3A1F56007858DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
 				};
 			};
 			buildConfigurationList = 807629CB2C3A02DC007C91ED /* Build configuration list for PBXProject "OpenTweet" */;
@@ -489,6 +538,7 @@
 				80CD93C62C3A067E007858DE /* NetworkingServiceTests */,
 				80CD93E42C3A14FF007858DE /* InjectionService */,
 				80CD93ED2C3A1500007858DE /* InjectionServiceTests */,
+				80CD94082C3A1F56007858DE /* NetworkingServiceInterface */,
 			);
 		};
 /* End PBXProject section */
@@ -608,6 +658,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CD93F62C3A1500007858DE /* InjectionServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD94052C3A1F56007858DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD940C2C3A1F56007858DE /* NetworkingServiceInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,6 +1219,37 @@
 			};
 			name = Release;
 		};
+		80CD940E2C3A1F56007858DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80CD940F2C3A1F56007858DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1232,6 +1321,15 @@
 			buildConfigurations = (
 				80CD94012C3A1500007858DE /* Debug */,
 				80CD94022C3A1500007858DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CD940D2C3A1F56007858DE /* Build configuration list for PBXNativeTarget "NetworkingServiceInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CD940E2C3A1F56007858DE /* Debug */,
+				80CD940F2C3A1F56007858DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
