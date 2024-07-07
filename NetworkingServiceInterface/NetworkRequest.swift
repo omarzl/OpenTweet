@@ -24,7 +24,7 @@ import InjectionService
         get {
             Future { future in
                 @Inject
-                var service: Networking?
+                var service: (any Networking)?
                 guard let service else {
                     future(.failure(InjectionError.unregistered(type: Networking.self)))
                     return
