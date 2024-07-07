@@ -22,7 +22,7 @@ struct TweetTimelineView: View {
                         HStack(spacing: 10) {
                             avatarViewFor(tweet: tweet)
                             VStack {
-                                HStack {
+                                HStack(spacing: 2) {
                                     authorViewFor(tweet: tweet)
                                 }
                                 contentViewFor(tweet: tweet)
