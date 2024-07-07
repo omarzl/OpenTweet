@@ -25,7 +25,7 @@ final class NetworkingServiceTests: XCTestCase {
         let service = NetworkService(requester: NetworkingRequesterMock(mock: ModelMock()))
         do {
             // when
-            let response: ModelMock = try await service.get(from: "")
+            let _: ModelMock = try await service.get(from: "")
             XCTAssert(false, "Expected an error")
         } catch {
             // then
