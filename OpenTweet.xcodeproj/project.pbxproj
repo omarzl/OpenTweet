@@ -41,6 +41,7 @@
 		80CD94462C3B202A007858DE /* libTweetTimelineFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94342C3B1E80007858DE /* libTweetTimelineFeature.a */; };
 		80CD94502C3B227D007858DE /* TweetTimelineFeatureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */; };
 		80CD945A2C3B22B3007858DE /* libTweetTimelineFeatureInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */; };
+		80CD945C2C3B2341007858DE /* OpenTweetModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD945B2C3B2341007858DE /* OpenTweetModelContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +239,7 @@
 		80CD943F2C3B1F84007858DE /* TweetTimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineRepository.swift; sourceTree = "<group>"; };
 		80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetTimelineFeatureInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineFeatureInterface.swift; sourceTree = "<group>"; };
+		80CD945B2C3B2341007858DE /* OpenTweetModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetModelContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				807629D32C3A02DC007C91ED /* OpenTweetApp.swift */,
+				80CD945B2C3B2341007858DE /* OpenTweetModelContainer.swift */,
 				807629D92C3A02DD007C91ED /* Assets.xcassets */,
 				807629DC2C3A02DD007C91ED /* Preview Content */,
 				80CD943D2C3B1F52007858DE /* Registrables.swift */,
@@ -845,6 +848,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CD943E2C3B1F52007858DE /* Registrables.swift in Sources */,
+				80CD945C2C3B2341007858DE /* OpenTweetModelContainer.swift in Sources */,
 				807629D42C3A02DC007C91ED /* OpenTweetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

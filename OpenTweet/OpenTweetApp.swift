@@ -9,30 +9,17 @@ import SwiftUI
 import SwiftData
 import InjectionService
 import TweetTimelineFeatureInterface
-import TweetFoundation
 
 @main
 struct OpenTweetApp: App {
     
     @Inject
-    var timelineFeature: (any TweetTimelineFeatureInterface)?
+    private var timelineFeature: (any TweetTimelineFeatureInterface)?
+    private let modelContainer = OpenTweetModelContainer()
     
     init() {
         Registrables().register()
     }
-    
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Tweet.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
 
     var body: some Scene {
         WindowGroup {
@@ -40,6 +27,6 @@ struct OpenTweetApp: App {
                 AnyView(view)
             }
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(modelContainer.container)
     }
 }
