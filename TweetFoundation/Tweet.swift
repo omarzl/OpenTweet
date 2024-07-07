@@ -23,7 +23,7 @@ final public class Tweet: Decodable {
     /// Avatar image of the author
     public let avatar: String?
     /// Date when the tweet was published, in the format ISO-8601
-    public let date: String
+    public let date: Date
     /// Replies from other users to this tweet
     public var replies = [Tweet]()
     /// The parent tweet if it is a reply
@@ -43,7 +43,11 @@ final public class Tweet: Decodable {
         author = try container.decode(String.self, forKey: .author)
         content = try container.decode(String.self, forKey: .content)
         avatar = try container.decodeIfPresent(String.self, forKey: .avatar)
-        date = try container.decode(String.self, forKey: .date)
+        let dateString = try container.decode(String.self, forKey: .date)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        date = formatter.date(from: dateString) ?? Date()
         inReplyTo = try container.decodeIfPresent(String.self, forKey: .inReplyTo)
     }
 }

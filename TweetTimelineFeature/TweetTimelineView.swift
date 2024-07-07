@@ -19,7 +19,7 @@ struct TweetTimelineView: View {
             List {
                 ForEach(viewModel.tweets) { tweet in
                     VStack {
-                        HStack() {
+                        HStack(spacing: 10) {
                             avatarViewFor(tweet: tweet)
                             VStack {
                                 HStack {
@@ -92,6 +92,20 @@ struct TweetTimelineView: View {
     func contentViewFor(tweet: Tweet) -> some View {
         Text(tweet.content)
             .font(.body)
+        
+        Spacer()
+            .frame(height: 3)
+        
+        HStack {
+            Text(OTDateFormatter.relative.localizedString(for: tweet.date, relativeTo: Date.now))
+                .font(.caption2)
+            
+            Spacer()
+            
+            generateIconAndText(named: "message")
+            generateIconAndText(named: "heart")
+            generateIconAndText(named: "bookmark")
+        }
     }
     
     @ViewBuilder
@@ -100,6 +114,18 @@ struct TweetTimelineView: View {
             .font(.caption)
             .frame(maxWidth: .infinity)
             .listRowSeparator(.hidden)
+    }
+    
+    @ViewBuilder
+    func generateIconAndText(named: String) -> some View {
+        HStack {
+            Image(systemName: named)
+                .renderingMode(.template)
+                .foregroundColor(.gray)
+            
+            Text("\(Int.random(in: 0..<1000))")
+                .font(.caption2)
+        }
     }
 }
 
@@ -118,5 +144,13 @@ struct SeparatorModifier: ViewModifier {
             .listRowSeparatorTint(.blue, edges: .all)
             .frame( maxWidth: .infinity)
             .edgesIgnoringSafeArea(.horizontal)
+    }
+}
+
+enum OTDateFormatter {
+    static var relative: RelativeDateTimeFormatter {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter
     }
 }
