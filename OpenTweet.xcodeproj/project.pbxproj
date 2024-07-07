@@ -27,7 +27,7 @@
 		80CD93FA2C3A1500007858DE /* InjectionService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93E52C3A14FF007858DE /* InjectionService.framework */; };
 		80CD93FC2C3A1500007858DE /* InjectionService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD93E52C3A14FF007858DE /* InjectionService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80CD94042C3A1515007858DE /* InjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94032C3A1515007858DE /* InjectionService.swift */; };
-		80CD940C2C3A1F56007858DE /* NetworkingServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */; };
+		80CD940C2C3A1F56007858DE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD940B2C3A1F56007858DE /* Networking.swift */; };
 		80CD94112C3A1F81007858DE /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD93D72C3A08D2007858DE /* NetworkingError.swift */; };
 		80CD94162C3A1FD6007858DE /* libNetworkingServiceInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */; };
 /* End PBXBuildFile section */
@@ -134,7 +134,7 @@
 		80CD93F52C3A1500007858DE /* InjectionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionServiceTests.swift; sourceTree = "<group>"; };
 		80CD94032C3A1515007858DE /* InjectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionService.swift; sourceTree = "<group>"; };
 		80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNetworkingServiceInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceInterface.swift; sourceTree = "<group>"; };
+		80CD940B2C3A1F56007858DE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,7 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				80CD93D72C3A08D2007858DE /* NetworkingError.swift */,
-				80CD940B2C3A1F56007858DE /* NetworkingServiceInterface.swift */,
+				80CD940B2C3A1F56007858DE /* Networking.swift */,
 			);
 			path = NetworkingServiceInterface;
 			sourceTree = "<group>";
@@ -675,7 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CD94112C3A1F81007858DE /* NetworkingError.swift in Sources */,
-				80CD940C2C3A1F56007858DE /* NetworkingServiceInterface.swift in Sources */,
+				80CD940C2C3A1F56007858DE /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
