@@ -7,6 +7,8 @@
 
 import SwiftData
 
+/// Access to the shared model container
 public protocol OTModelContainer {
+    /// The raw container
     var container: ModelContainer { get }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 import TweetFoundation
 import TweetUI
 
+/// Main view that shows a timeline of tweets
 struct TweetTimelineView: View {
     
     @StateObject

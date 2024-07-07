@@ -7,7 +7,9 @@
 
 import Foundation
 
+/// Base Date formatters
 enum OTDateFormatter {
+    /// Creates a date formatter that presents a time internal
     static var relative: RelativeDateTimeFormatter {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full

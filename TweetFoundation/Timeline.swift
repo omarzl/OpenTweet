@@ -10,7 +10,7 @@ import SwiftData
 
 /// Representation a timeline of tweets
 final public class Timeline: Decodable {
-    
+    /// The tweets list of a timeline
     public let tweets: [Tweet]
     
     enum CodingKeys: String, CodingKey {

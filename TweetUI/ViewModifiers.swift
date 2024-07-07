@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Base modifier for a `List` view
 public struct ListModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content
@@ -18,6 +19,7 @@ public struct ListModifier: ViewModifier {
     public init() {}
 }
 
+/// Base modifier for the separators of a `List` view
 public struct SeparatorModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content

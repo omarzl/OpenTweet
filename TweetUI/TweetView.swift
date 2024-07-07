@@ -8,10 +8,13 @@
 import SwiftUI
 import TweetFoundation
 
+/// Shared UI for any tweet
 public struct TweetView: View {
     
     private let tweet: Tweet
-    
+
+    /// Initializes the view
+    /// - Parameter tweet: Tweet to be presented
     public init(tweet: Tweet) {
         self.tweet = tweet
     }

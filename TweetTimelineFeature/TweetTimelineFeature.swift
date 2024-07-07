@@ -8,6 +8,7 @@
 import SwiftUI
 import TweetTimelineFeatureInterface
 
+/// Feature entry point for a timeline of tweets
 public struct TweetTimelineFeature: TweetTimelineFeatureInterface {
     
     public init() {}
