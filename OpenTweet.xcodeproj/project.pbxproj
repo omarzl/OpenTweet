@@ -33,6 +33,7 @@
 		80CD94182C3A2079007858DE /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94172C3A2079007858DE /* NetworkRequest.swift */; };
 		80CD941A2C3A20EB007858DE /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94192C3A20EB007858DE /* Inject.swift */; };
 		80CD941C2C3A2221007858DE /* InjectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD941B2C3A2221007858DE /* InjectionError.swift */; };
+		80CD94202C3A2B2D007858DE /* libNetworkingServiceInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 80CD93E42C3A14FF007858DE;
 			remoteInfo = InjectionService;
+		};
+		80CD94212C3A2B31007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD93BD2C3A067D007858DE;
+			remoteInfo = NetworkingService;
+		};
+		80CD94232C3A2B35007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD94082C3A1F56007858DE;
+			remoteInfo = NetworkingServiceInterface;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -154,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CD94202C3A2B2D007858DE /* libNetworkingServiceInterface.a in Frameworks */,
 				80CD93FA2C3A1500007858DE /* InjectionService.framework in Frameworks */,
 				80CD93DE2C3A0EDF007858DE /* NetworkingService.framework in Frameworks */,
 			);
@@ -369,6 +385,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				80CD94242C3A2B35007858DE /* PBXTargetDependency */,
+				80CD94222C3A2B31007858DE /* PBXTargetDependency */,
 				80CD93F92C3A1500007858DE /* PBXTargetDependency */,
 			);
 			name = OpenTweet;
@@ -739,6 +757,17 @@
 			isa = PBXTargetDependency;
 			target = 80CD93E42C3A14FF007858DE /* InjectionService */;
 			targetProxy = 80CD941E2C3A22EE007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94222C3A2B31007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 80CD93BD2C3A067D007858DE /* NetworkingService */;
+			targetProxy = 80CD94212C3A2B31007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94242C3A2B35007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD94082C3A1F56007858DE /* NetworkingServiceInterface */;
+			targetProxy = 80CD94232C3A2B35007858DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
