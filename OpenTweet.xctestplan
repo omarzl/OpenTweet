@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "253A1D50-D90B-478F-973C-68C223834C31",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:OpenTweet.xcodeproj",
+        "identifier" : "807629E22C3A02DD007C91ED",
+        "name" : "OpenTweetTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:OpenTweet.xcodeproj",
+        "identifier" : "807629EC2C3A02DD007C91ED",
+        "name" : "OpenTweetUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:OpenTweet.xcodeproj",
+        "identifier" : "80CD93C62C3A067E007858DE",
+        "name" : "NetworkingServiceTests"
+      }
+    }
+  ],
+  "version" : 1
+}
