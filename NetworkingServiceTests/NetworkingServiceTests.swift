@@ -13,7 +13,7 @@ final class NetworkingServiceTests: XCTestCase {
     func testGetRequest() async throws {
         // given
         let mock = ModelMock()
-        let service = NetworkService(requester: NetworkingRequesterMock(mock: mock))
+        let service = NetworkingServiceImpl(requester: NetworkingRequesterMock(mock: mock))
         // when
         let response: ModelMock = try await service.get(from: "https://mock.com")
         // then
@@ -22,7 +22,7 @@ final class NetworkingServiceTests: XCTestCase {
     
     func testNetworkingErrors() async {
         // given
-        let service = NetworkService(requester: NetworkingRequesterMock(mock: ModelMock()))
+        let service = NetworkingServiceImpl(requester: NetworkingRequesterMock(mock: ModelMock()))
         do {
             // when
             let _: ModelMock = try await service.get(from: "")
