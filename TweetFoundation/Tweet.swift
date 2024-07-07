@@ -12,6 +12,7 @@ import SwiftData
 @Model
 final public class Tweet: Decodable {
     /// Unique identifier
+    @Attribute(.unique)
     public let id: String
     /// Author handle
     public let author: String
@@ -23,25 +24,11 @@ final public class Tweet: Decodable {
     public let date: String
     /// Replies from other users to this tweet
     public var replies = [Tweet]()
+    /// The parent tweet if it is a reply
+    @Relationship(inverse: \Tweet.replies) var parent: Tweet?
     
     enum CodingKeys: CodingKey {
         case id, author, content, avatar, date
-    }
-    
-    public init(
-        id: String,
-        author: String,
-        content: String,
-        avatar: String?,
-        date: String,
-        replies: [Tweet]
-    ) {
-        self.id = id
-        self.author = author
-        self.content = content
-        self.avatar = avatar
-        self.date = date
-        self.replies = replies
     }
     
     required public init(from decoder: Decoder) throws {

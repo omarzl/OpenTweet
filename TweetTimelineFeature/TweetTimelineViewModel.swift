@@ -26,24 +26,33 @@ final class TweetTimelineViewModel: ObservableObject {
     @Inject
     private var modelContainer: OTModelContainer?
     
-    init() {
-        loadTweets()
-    }
-    
+    /// Loads the data from the storage or from the API
     func refresh() {
+        Task { @MainActor in
+            await loadTweets()
+            // If they are saved, we are not getting them from the API
+            guard tweets.isEmpty else { return }
+            getTweets()
+        }
+    }
+}
+
+private extension TweetTimelineViewModel {
+    func getTweets() {
         request.sink { result in
             if case let .failure(error) = result {
                 print(error)
             }
         } receiveValue: { [weak self] timeline in
-            self?.save(timeline: timeline)
-            self?.loadTweets()
+            guard let self else { return }
+            self.save(timeline: timeline)
+            Task {
+                await self.loadTweets()
+            }
         }
         .store(in: &cancellables)
     }
-}
-
-private extension TweetTimelineViewModel {
+    
     func save(timeline: Timeline) {
         Task { @MainActor in
             timeline.tweets.forEach {
@@ -52,13 +61,12 @@ private extension TweetTimelineViewModel {
         }
     }
     
-    func loadTweets() {
+    @MainActor
+    func loadTweets() async {
         guard let modelContainer else { return }
-        Task { @MainActor in
-            do {
-                tweets = try modelContainer.container.mainContext.fetch(FetchDescriptor<Tweet>())
-            } catch {
-            }
+        do {
+            tweets = try modelContainer.container.mainContext.fetch(FetchDescriptor<Tweet>())
+        } catch {
         }
     }
 }
