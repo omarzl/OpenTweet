@@ -19,6 +19,17 @@ final class InjectionServiceTests: XCTestCase {
         // then
         XCTAssertNotNil(resolved as? Mock)
     }
+    
+    func testResolvingUsingPropertyWrapperExectSuccess() {
+        // given
+        let service = InjectionServiceImpl.instance
+        // when
+        service.register(registrable: ProtocolMock.self) { Mock() }
+        @Inject
+        var resolved: ProtocolMock?
+        // then
+        XCTAssertNotNil(resolved as? Mock)
+    }
 }
 
 protocol ProtocolMock {}
