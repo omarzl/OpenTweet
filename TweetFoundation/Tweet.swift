@@ -15,6 +15,8 @@ final public class Tweet: Decodable {
     @Attribute(.unique)
     public let id: String
     /// Author handle
+    public let name = Random.randomFakeName()
+    /// Author handle
     public let author: String
     /// Content of the tweet
     public let content: String
