@@ -34,6 +34,13 @@
         "identifier" : "80CD93C62C3A067E007858DE",
         "name" : "NetworkingServiceTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:OpenTweet.xcodeproj",
+        "identifier" : "80CD93ED2C3A1500007858DE",
+        "name" : "InjectionServiceTests"
+      }
     }
   ],
   "version" : 1

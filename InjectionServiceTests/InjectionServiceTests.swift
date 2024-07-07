@@ -10,4 +10,16 @@ import XCTest
 
 final class InjectionServiceTests: XCTestCase {
 
+    func testResolvingProtocolExpectsSuccess() {
+        // given
+        let service = InjectionServiceImpl.instance
+        // when
+        service.register(registrable: ProtocolMock.self) { Mock() }
+        let resolved = service.resolve(registrable: ProtocolMock.self)
+        // then
+        XCTAssertNotNil(resolved as? Mock)
+    }
 }
+
+protocol ProtocolMock {}
+struct Mock: ProtocolMock {}
