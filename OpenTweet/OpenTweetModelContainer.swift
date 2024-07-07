@@ -9,12 +9,13 @@ import SwiftData
 import TweetFoundation
 
 /// Wraps the SwiftData model container
-struct OpenTweetModelContainer {
+final class OpenTweetModelContainer: OTModelContainer {
+    
+    static let shared = OpenTweetModelContainer()
     
     let container: ModelContainer = {
         let schema = Schema([
             Tweet.self,
-            Timeline.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
@@ -24,4 +25,6 @@ struct OpenTweetModelContainer {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    private init() {}
 }

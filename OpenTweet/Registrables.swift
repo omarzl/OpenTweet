@@ -11,6 +11,7 @@ import NetworkingService
 import NetworkingServiceInterface
 import TweetTimelineFeature
 import TweetTimelineFeatureInterface
+import TweetFoundation
 
 struct Registrables {
     func register() {
@@ -20,6 +21,10 @@ struct Registrables {
         
         InjectionServiceImpl.instance.register(registrable: (any TweetTimelineFeatureInterface).self) {
             TweetTimelineFeature()
+        }
+        
+        InjectionServiceImpl.instance.register(registrable: (any OTModelContainer).self) {
+            OpenTweetModelContainer.shared
         }
     }
 }

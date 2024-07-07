@@ -15,7 +15,6 @@ struct OpenTweetApp: App {
     
     @Inject
     private var timelineFeature: (any TweetTimelineFeatureInterface)?
-    private let modelContainer = OpenTweetModelContainer()
     
     init() {
         Registrables().register()
@@ -27,6 +26,6 @@ struct OpenTweetApp: App {
                 AnyView(view)
             }
         }
-        .modelContainer(modelContainer.container)
+        .modelContainer(OpenTweetModelContainer.shared.container)
     }
 }
