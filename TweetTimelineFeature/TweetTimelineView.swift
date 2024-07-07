@@ -9,6 +9,8 @@ import SwiftData
 import SwiftUI
 import TweetFoundation
 import TweetUI
+import TweetThreadFeatureInterface
+import InjectionService
 
 /// Main view that shows a timeline of tweets
 struct TweetTimelineView: View {
@@ -20,7 +22,15 @@ struct TweetTimelineView: View {
         NavigationView {
             List {
                 ForEach(viewModel.tweets) { tweet in
-                    TweetView(tweet: tweet)
+                    NavigationLink {
+                        @Inject
+                        var threadFeature: (any TweetThreadFeatureInterface)?
+                        if let threadFeature {
+                            AnyView(threadFeature.viewFor(tweet: tweet))
+                        }
+                    } label: {
+                        TweetView(tweet: tweet)
+                    }
                 }
                 .modifier(SeparatorModifier())
                 

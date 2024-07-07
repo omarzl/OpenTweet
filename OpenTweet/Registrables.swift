@@ -11,6 +11,8 @@ import NetworkingService
 import NetworkingServiceInterface
 import TweetTimelineFeature
 import TweetTimelineFeatureInterface
+import TweetThreadFeature
+import TweetThreadFeatureInterface
 import TweetFoundation
 
 struct Registrables {
@@ -21,6 +23,10 @@ struct Registrables {
         
         InjectionServiceImpl.instance.register(registrable: (any TweetTimelineFeatureInterface).self) {
             TweetTimelineFeature()
+        }
+        
+        InjectionServiceImpl.instance.register(registrable: (any TweetThreadFeatureInterface).self) {
+            TweetThreadFeature()
         }
         
         InjectionServiceImpl.instance.register(registrable: (any OTModelContainer).self) {
