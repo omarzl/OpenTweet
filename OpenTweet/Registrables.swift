@@ -10,6 +10,7 @@ import InjectionService
 import NetworkingService
 import NetworkingServiceInterface
 import TweetTimelineFeature
+import TweetTimelineFeatureInterface
 
 struct Registrables {
     func register() {

@@ -41,6 +41,8 @@
 		80CD94402C3B1F85007858DE /* TweetTimelineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD943F2C3B1F84007858DE /* TweetTimelineRepository.swift */; };
 		80CD94452C3B202A007858DE /* libTweetFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94292C3B1B36007858DE /* libTweetFoundation.a */; };
 		80CD94462C3B202A007858DE /* libTweetTimelineFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94342C3B1E80007858DE /* libTweetTimelineFeature.a */; };
+		80CD94502C3B227D007858DE /* TweetTimelineFeatureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */; };
+		80CD945A2C3B22B3007858DE /* libTweetTimelineFeatureInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,27 @@
 			remoteGlobalIDString = 80CD94332C3B1E80007858DE;
 			remoteInfo = TweetTimelineFeature;
 		};
+		80CD94542C3B2281007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD94282C3B1B36007858DE;
+			remoteInfo = TweetFoundation;
+		};
+		80CD94562C3B2285007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD944C2C3B227D007858DE;
+			remoteInfo = TweetTimelineFeatureInterface;
+		};
+		80CD94582C3B22B1007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD944C2C3B227D007858DE;
+			remoteInfo = TweetTimelineFeatureInterface;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,6 +184,15 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		80CD94322C3B1E80007858DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD944B2C3B227D007858DE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
@@ -208,6 +240,8 @@
 		80CD943B2C3B1EAD007858DE /* TweetTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineView.swift; sourceTree = "<group>"; };
 		80CD943D2C3B1F52007858DE /* Registrables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrables.swift; sourceTree = "<group>"; };
 		80CD943F2C3B1F84007858DE /* TweetTimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineRepository.swift; sourceTree = "<group>"; };
+		80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetTimelineFeatureInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineFeatureInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CD945A2C3B22B3007858DE /* libTweetTimelineFeatureInterface.a in Frameworks */,
 				80CD94452C3B202A007858DE /* libTweetFoundation.a in Frameworks */,
 				80CD94462C3B202A007858DE /* libTweetTimelineFeature.a in Frameworks */,
 				80CD94202C3A2B2D007858DE /* libNetworkingServiceInterface.a in Frameworks */,
@@ -289,6 +324,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD944A2C3B227D007858DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -306,6 +348,7 @@
 				80CD940A2C3A1F56007858DE /* NetworkingServiceInterface */,
 				80CD942A2C3B1B36007858DE /* TweetFoundation */,
 				80CD94352C3B1E80007858DE /* TweetTimelineFeature */,
+				80CD944E2C3B227D007858DE /* TweetTimelineFeatureInterface */,
 				807629D12C3A02DC007C91ED /* Products */,
 				80CD93DD2C3A0EDF007858DE /* Frameworks */,
 			);
@@ -324,6 +367,7 @@
 				80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */,
 				80CD94292C3B1B36007858DE /* libTweetFoundation.a */,
 				80CD94342C3B1E80007858DE /* libTweetTimelineFeature.a */,
+				80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -438,6 +482,14 @@
 			path = TweetTimelineFeature;
 			sourceTree = "<group>";
 		};
+		80CD944E2C3B227D007858DE /* TweetTimelineFeatureInterface */ = {
+			isa = PBXGroup;
+			children = (
+				80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */,
+			);
+			path = TweetTimelineFeatureInterface;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -470,6 +522,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				80CD94592C3B22B1007858DE /* PBXTargetDependency */,
 				80CD94422C3B2025007858DE /* PBXTargetDependency */,
 				80CD94442C3B2025007858DE /* PBXTargetDependency */,
 				80CD94242C3A2B35007858DE /* PBXTargetDependency */,
@@ -637,10 +690,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				80CD94572C3B2285007858DE /* PBXTargetDependency */,
 			);
 			name = TweetTimelineFeature;
 			productName = TweetTimelineFeature;
 			productReference = 80CD94342C3B1E80007858DE /* libTweetTimelineFeature.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		80CD944C2C3B227D007858DE /* TweetTimelineFeatureInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CD94512C3B227D007858DE /* Build configuration list for PBXNativeTarget "TweetTimelineFeatureInterface" */;
+			buildPhases = (
+				80CD94492C3B227D007858DE /* Sources */,
+				80CD944A2C3B227D007858DE /* Frameworks */,
+				80CD944B2C3B227D007858DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80CD94552C3B2281007858DE /* PBXTargetDependency */,
+			);
+			name = TweetTimelineFeatureInterface;
+			productName = TweetTimelineFeatureInterface;
+			productReference = 80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -686,6 +758,9 @@
 					80CD94332C3B1E80007858DE = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					80CD944C2C3B227D007858DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
 				};
 			};
 			buildConfigurationList = 807629CB2C3A02DC007C91ED /* Build configuration list for PBXProject "OpenTweet" */;
@@ -711,6 +786,7 @@
 				80CD94082C3A1F56007858DE /* NetworkingServiceInterface */,
 				80CD94282C3B1B36007858DE /* TweetFoundation */,
 				80CD94332C3B1E80007858DE /* TweetTimelineFeature */,
+				80CD944C2C3B227D007858DE /* TweetTimelineFeatureInterface */,
 			);
 		};
 /* End PBXProject section */
@@ -863,6 +939,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD94492C3B227D007858DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD94502C3B227D007858DE /* TweetTimelineFeatureInterface.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -926,6 +1010,21 @@
 			isa = PBXTargetDependency;
 			target = 80CD94332C3B1E80007858DE /* TweetTimelineFeature */;
 			targetProxy = 80CD94432C3B2025007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94552C3B2281007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD94282C3B1B36007858DE /* TweetFoundation */;
+			targetProxy = 80CD94542C3B2281007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94572C3B2285007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD944C2C3B227D007858DE /* TweetTimelineFeatureInterface */;
+			targetProxy = 80CD94562C3B2285007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94592C3B22B1007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD944C2C3B227D007858DE /* TweetTimelineFeatureInterface */;
+			targetProxy = 80CD94582C3B22B1007858DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1535,6 +1634,37 @@
 			};
 			name = Release;
 		};
+		80CD94522C3B227D007858DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80CD94532C3B227D007858DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1633,6 +1763,15 @@
 			buildConfigurations = (
 				80CD94392C3B1E80007858DE /* Debug */,
 				80CD943A2C3B1E80007858DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CD94512C3B227D007858DE /* Build configuration list for PBXNativeTarget "TweetTimelineFeatureInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CD94522C3B227D007858DE /* Debug */,
+				80CD94532C3B227D007858DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

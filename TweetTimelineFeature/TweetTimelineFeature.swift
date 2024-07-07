@@ -6,11 +6,7 @@
 //
 
 import SwiftUI
-
-public protocol TweetTimelineFeatureInterface {
-    associatedtype V: View
-    func view() -> V
-}
+import TweetTimelineFeatureInterface
 
 public struct TweetTimelineFeature: TweetTimelineFeatureInterface {
     

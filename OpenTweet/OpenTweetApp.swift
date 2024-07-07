@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 import InjectionService
-import TweetTimelineFeature
+import TweetTimelineFeatureInterface
 
 @main
 struct OpenTweetApp: App {
