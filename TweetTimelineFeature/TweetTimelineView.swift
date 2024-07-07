@@ -5,13 +5,21 @@
 //  Created by Omar Zúñiga Lagunas on 07/07/24.
 //
 
+import SwiftData
 import SwiftUI
+import TweetFoundation
 
 struct TweetTimelineView: View {
     
-    let viewModel = TweetTimelineViewModel()
+    @StateObject
+    private var viewModel = TweetTimelineViewModel()
     
     var body: some View {
-        Text("hello")
+        ForEach(viewModel.tweets) { tweet in
+            Text(tweet.content)
+        }
+        .onAppear {
+            viewModel.refresh()
+        }
     }
 }

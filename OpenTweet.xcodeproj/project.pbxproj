@@ -36,7 +36,6 @@
 		80CD94372C3B1E80007858DE /* TweetTimelineFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94362C3B1E80007858DE /* TweetTimelineFeature.swift */; };
 		80CD943C2C3B1EAD007858DE /* TweetTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD943B2C3B1EAD007858DE /* TweetTimelineView.swift */; };
 		80CD943E2C3B1F52007858DE /* Registrables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD943D2C3B1F52007858DE /* Registrables.swift */; };
-		80CD94402C3B1F85007858DE /* TweetTimelineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD943F2C3B1F84007858DE /* TweetTimelineRepository.swift */; };
 		80CD94452C3B202A007858DE /* libTweetFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94292C3B1B36007858DE /* libTweetFoundation.a */; };
 		80CD94462C3B202A007858DE /* libTweetTimelineFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94342C3B1E80007858DE /* libTweetTimelineFeature.a */; };
 		80CD94502C3B227D007858DE /* TweetTimelineFeatureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */; };
@@ -240,7 +239,6 @@
 		80CD94362C3B1E80007858DE /* TweetTimelineFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineFeature.swift; sourceTree = "<group>"; };
 		80CD943B2C3B1EAD007858DE /* TweetTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineView.swift; sourceTree = "<group>"; };
 		80CD943D2C3B1F52007858DE /* Registrables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrables.swift; sourceTree = "<group>"; };
-		80CD943F2C3B1F84007858DE /* TweetTimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineRepository.swift; sourceTree = "<group>"; };
 		80CD944D2C3B227D007858DE /* libTweetTimelineFeatureInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetTimelineFeatureInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CD944F2C3B227D007858DE /* TweetTimelineFeatureInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineFeatureInterface.swift; sourceTree = "<group>"; };
 		80CD945B2C3B2341007858DE /* OpenTweetModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetModelContainer.swift; sourceTree = "<group>"; };
@@ -484,7 +482,6 @@
 			isa = PBXGroup;
 			children = (
 				80CD94362C3B1E80007858DE /* TweetTimelineFeature.swift */,
-				80CD943F2C3B1F84007858DE /* TweetTimelineRepository.swift */,
 				80CD943B2C3B1EAD007858DE /* TweetTimelineView.swift */,
 				80CD945D2C3B24A1007858DE /* TweetTimelineViewModel.swift */,
 			);
@@ -946,7 +943,6 @@
 			files = (
 				80CD94372C3B1E80007858DE /* TweetTimelineFeature.swift in Sources */,
 				80CD943C2C3B1EAD007858DE /* TweetTimelineView.swift in Sources */,
-				80CD94402C3B1F85007858DE /* TweetTimelineRepository.swift in Sources */,
 				80CD945E2C3B24A1007858DE /* TweetTimelineViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
