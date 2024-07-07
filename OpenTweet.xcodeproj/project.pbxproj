@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		807629D42C3A02DC007C91ED /* OpenTweetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807629D32C3A02DC007C91ED /* OpenTweetApp.swift */; };
-		807629D62C3A02DC007C91ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807629D52C3A02DC007C91ED /* ContentView.swift */; };
-		807629D82C3A02DC007C91ED /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807629D72C3A02DC007C91ED /* Item.swift */; };
 		807629DA2C3A02DD007C91ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807629D92C3A02DD007C91ED /* Assets.xcassets */; };
 		807629DE2C3A02DD007C91ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807629DD2C3A02DD007C91ED /* Preview Assets.xcassets */; };
 		807629E82C3A02DD007C91ED /* OpenTweetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807629E72C3A02DD007C91ED /* OpenTweetTests.swift */; };
@@ -206,8 +204,6 @@
 /* Begin PBXFileReference section */
 		807629D02C3A02DC007C91ED /* OpenTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		807629D32C3A02DC007C91ED /* OpenTweetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetApp.swift; sourceTree = "<group>"; };
-		807629D52C3A02DC007C91ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		807629D72C3A02DC007C91ED /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		807629D92C3A02DD007C91ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		807629DD2C3A02DD007C91ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		807629E32C3A02DD007C91ED /* OpenTweetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTweetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,8 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				807629D32C3A02DC007C91ED /* OpenTweetApp.swift */,
-				807629D52C3A02DC007C91ED /* ContentView.swift */,
-				807629D72C3A02DC007C91ED /* Item.swift */,
 				807629D92C3A02DD007C91ED /* Assets.xcassets */,
 				807629DC2C3A02DD007C91ED /* Preview Content */,
 				80CD943D2C3B1F52007858DE /* Registrables.swift */,
@@ -851,8 +845,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CD943E2C3B1F52007858DE /* Registrables.swift in Sources */,
-				807629D62C3A02DC007C91ED /* ContentView.swift in Sources */,
-				807629D82C3A02DC007C91ED /* Item.swift in Sources */,
 				807629D42C3A02DC007C91ED /* OpenTweetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

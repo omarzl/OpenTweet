@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import InjectionService
 import TweetTimelineFeatureInterface
+import TweetFoundation
 
 @main
 struct OpenTweetApp: App {
@@ -22,7 +23,7 @@ struct OpenTweetApp: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Tweet.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
