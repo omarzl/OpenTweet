@@ -34,6 +34,7 @@
 		80CD941A2C3A20EB007858DE /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94192C3A20EB007858DE /* Inject.swift */; };
 		80CD941C2C3A2221007858DE /* InjectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD941B2C3A2221007858DE /* InjectionError.swift */; };
 		80CD94202C3A2B2D007858DE /* libNetworkingServiceInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */; };
+		80CD942C2C3B1B36007858DE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD942B2C3B1B36007858DE /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD94272C3B1B36007858DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +172,8 @@
 		80CD94172C3A2079007858DE /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		80CD94192C3A20EB007858DE /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		80CD941B2C3A2221007858DE /* InjectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionError.swift; sourceTree = "<group>"; };
+		80CD94292C3B1B36007858DE /* libTweetFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD942B2C3B1B36007858DE /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +239,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80CD94262C3B1B36007858DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -242,6 +261,7 @@
 				80CD93E62C3A14FF007858DE /* InjectionService */,
 				80CD93F42C3A1500007858DE /* InjectionServiceTests */,
 				80CD940A2C3A1F56007858DE /* NetworkingServiceInterface */,
+				80CD942A2C3B1B36007858DE /* TweetFoundation */,
 				807629D12C3A02DC007C91ED /* Products */,
 				80CD93DD2C3A0EDF007858DE /* Frameworks */,
 			);
@@ -258,6 +278,7 @@
 				80CD93E52C3A14FF007858DE /* InjectionService.framework */,
 				80CD93EE2C3A1500007858DE /* InjectionServiceTests.xctest */,
 				80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */,
+				80CD94292C3B1B36007858DE /* libTweetFoundation.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,6 +372,14 @@
 				80CD94172C3A2079007858DE /* NetworkRequest.swift */,
 			);
 			path = NetworkingServiceInterface;
+			sourceTree = "<group>";
+		};
+		80CD942A2C3B1B36007858DE /* TweetFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				80CD942B2C3B1B36007858DE /* Tweet.swift */,
+			);
+			path = TweetFoundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +551,23 @@
 			productReference = 80CD94092C3A1F56007858DE /* libNetworkingServiceInterface.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		80CD94282C3B1B36007858DE /* TweetFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CD942D2C3B1B36007858DE /* Build configuration list for PBXNativeTarget "TweetFoundation" */;
+			buildPhases = (
+				80CD94252C3B1B36007858DE /* Sources */,
+				80CD94262C3B1B36007858DE /* Frameworks */,
+				80CD94272C3B1B36007858DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TweetFoundation;
+			productName = TweetFoundation;
+			productReference = 80CD94292C3B1B36007858DE /* libTweetFoundation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -559,6 +605,9 @@
 					80CD94082C3A1F56007858DE = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					80CD94282C3B1B36007858DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
 				};
 			};
 			buildConfigurationList = 807629CB2C3A02DC007C91ED /* Build configuration list for PBXProject "OpenTweet" */;
@@ -582,6 +631,7 @@
 				80CD93E42C3A14FF007858DE /* InjectionService */,
 				80CD93ED2C3A1500007858DE /* InjectionServiceTests */,
 				80CD94082C3A1F56007858DE /* NetworkingServiceInterface */,
+				80CD94282C3B1B36007858DE /* TweetFoundation */,
 			);
 		};
 /* End PBXProject section */
@@ -712,6 +762,14 @@
 				80CD94112C3A1F81007858DE /* NetworkingError.swift in Sources */,
 				80CD94182C3A2079007858DE /* NetworkRequest.swift in Sources */,
 				80CD940C2C3A1F56007858DE /* Networking.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CD94252C3B1B36007858DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD942C2C3B1B36007858DE /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1315,6 +1373,37 @@
 			};
 			name = Release;
 		};
+		80CD942E2C3B1B36007858DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80CD942F2C3B1B36007858DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CEG7XS8U4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1395,6 +1484,15 @@
 			buildConfigurations = (
 				80CD940E2C3A1F56007858DE /* Debug */,
 				80CD940F2C3A1F56007858DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CD942D2C3B1B36007858DE /* Build configuration list for PBXNativeTarget "TweetFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CD942E2C3B1B36007858DE /* Debug */,
+				80CD942F2C3B1B36007858DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
