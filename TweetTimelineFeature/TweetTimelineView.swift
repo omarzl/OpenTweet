@@ -30,13 +30,11 @@ struct TweetTimelineView: View {
                         }
                     }
                 }
-                .listRowSeparatorTint(.blue, edges: .all)
-                .frame( maxWidth: .infinity)
-                .edgesIgnoringSafeArea(.horizontal)
+                .modifier(SeparatorModifier())
+                
+                upToDate
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-            .background(Color.clear.edgesIgnoringSafeArea(.all))
+            .modifier(ListModifier())
             .navigationTitle("OpenTweet")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -94,5 +92,30 @@ struct TweetTimelineView: View {
     func contentViewFor(tweet: Tweet) -> some View {
         Text(tweet.content)
             .font(.body)
+    }
+    
+    var upToDate: some View {
+        Text("You are up to date!")
+            .font(.caption)
+            .frame(maxWidth: .infinity)
+            .listRowSeparator(.hidden)
+    }
+}
+
+struct ListModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .background(Color.clear.edgesIgnoringSafeArea(.all))
+    }
+}
+
+struct SeparatorModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .listRowSeparatorTint(.blue, edges: .all)
+            .frame( maxWidth: .infinity)
+            .edgesIgnoringSafeArea(.horizontal)
     }
 }
