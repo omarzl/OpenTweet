@@ -46,23 +46,22 @@ private extension TweetTimelineViewModel {
             }
         } receiveValue: { [weak self] timeline in
             guard let self else { return }
-            self.save(timeline: timeline)
             Task {
+                await self.save(timeline: timeline)
                 await self.loadTweets()
             }
         }
         .store(in: &cancellables)
     }
     
+    @MainActor
     func save(timeline: Timeline) {
-        Task { @MainActor in
-            timeline.tweets.forEach { tweet in
-                modelContainer?.container.mainContext.insert(tweet)
-                if let parentID = tweet.inReplyTo {
-                    let descriptor = FetchDescriptor(predicate: #Predicate<Tweet> { $0.id == parentID })
-                    let parentTweet = try? modelContainer?.container.mainContext.fetch(descriptor).first
-                    parentTweet?.replies.append(tweet)
-                }
+        timeline.tweets.forEach { tweet in
+            modelContainer?.container.mainContext.insert(tweet)
+            if let parentID = tweet.inReplyTo {
+                let descriptor = FetchDescriptor(predicate: #Predicate<Tweet> { $0.id == parentID })
+                let parentTweet = try? modelContainer?.container.mainContext.fetch(descriptor).first
+                parentTweet?.replies.append(tweet)
             }
         }
     }
