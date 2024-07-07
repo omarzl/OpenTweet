@@ -9,7 +9,7 @@ import Foundation
 import OSLog
 
 /// Responsible of sending networking requests
-final public class NetworkService {
+final public class NetworkingServiceImpl {
     
     // MARK: - Private properties
     

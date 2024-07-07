@@ -4,5 +4,5 @@ This framework is built statically and it is responsible of making network reque
 
 ## Overview
 
-The class `NetworkService` is a HTTP wrapper.
+The class `NetworkingServiceImpl` is a HTTP wrapper.
 The enum `NetworkingError` defines the possible errors.
