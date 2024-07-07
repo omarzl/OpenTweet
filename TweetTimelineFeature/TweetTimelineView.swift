@@ -32,7 +32,7 @@ struct TweetTimelineView: View {
                 }
                 .modifier(SeparatorModifier())
                 
-                upToDate
+                footLabel
             }
             .modifier(ListModifier())
             .navigationTitle("OpenTweet")
@@ -94,8 +94,9 @@ struct TweetTimelineView: View {
             .font(.body)
     }
     
-    var upToDate: some View {
-        Text("You are up to date!")
+    @ViewBuilder
+    var footLabel: some View {
+        Text(viewModel.tweets.isEmpty ? "Loading..." : "You are up to date!")
             .font(.caption)
             .frame(maxWidth: .infinity)
             .listRowSeparator(.hidden)
