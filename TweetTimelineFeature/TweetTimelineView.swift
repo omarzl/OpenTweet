@@ -16,7 +16,7 @@ struct TweetTimelineView: View {
     
     var body: some View {
         ForEach(viewModel.tweets) { tweet in
-            Text(tweet.id + tweet.content)
+            Text(tweet.id + " \(tweet.replies.count)")
         }
         .onAppear {
             viewModel.refresh()

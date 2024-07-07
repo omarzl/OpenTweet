@@ -25,10 +25,14 @@ final public class Tweet: Decodable {
     /// Replies from other users to this tweet
     public var replies = [Tweet]()
     /// The parent tweet if it is a reply
-    @Relationship(inverse: \Tweet.replies) var parent: Tweet?
+    @Relationship(inverse: \Tweet.replies)
+    public var parent: Tweet?
+    /// The tweet ID to which it is replying
+    @Transient
+    public var inReplyTo: String?
     
     enum CodingKeys: CodingKey {
-        case id, author, content, avatar, date
+        case id, author, content, avatar, date, inReplyTo
     }
     
     required public init(from decoder: Decoder) throws {
@@ -38,5 +42,6 @@ final public class Tweet: Decodable {
         content = try container.decode(String.self, forKey: .content)
         avatar = try container.decodeIfPresent(String.self, forKey: .avatar)
         date = try container.decode(String.self, forKey: .date)
+        inReplyTo = try container.decodeIfPresent(String.self, forKey: .inReplyTo)
     }
 }

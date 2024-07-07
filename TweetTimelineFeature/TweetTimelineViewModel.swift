@@ -5,6 +5,7 @@
 //  Created by Omar Zúñiga Lagunas on 07/07/24.
 //
 
+import Foundation
 import Combine
 import SwiftData
 import TweetFoundation
@@ -55,8 +56,13 @@ private extension TweetTimelineViewModel {
     
     func save(timeline: Timeline) {
         Task { @MainActor in
-            timeline.tweets.forEach {
-                modelContainer?.container.mainContext.insert($0)
+            timeline.tweets.forEach { tweet in
+                modelContainer?.container.mainContext.insert(tweet)
+                if let parentID = tweet.inReplyTo {
+                    let descriptor = FetchDescriptor(predicate: #Predicate<Tweet> { $0.id == parentID })
+                    let parentTweet = try? modelContainer?.container.mainContext.fetch(descriptor).first
+                    parentTweet?.replies.append(tweet)
+                }
             }
         }
     }
@@ -65,7 +71,8 @@ private extension TweetTimelineViewModel {
     func loadTweets() async {
         guard let modelContainer else { return }
         do {
-            tweets = try modelContainer.container.mainContext.fetch(FetchDescriptor<Tweet>())
+            let descriptor = FetchDescriptor(predicate: #Predicate<Tweet> { $0.parent == nil })
+            tweets = try modelContainer.container.mainContext.fetch(descriptor)
         } catch {
         }
     }
