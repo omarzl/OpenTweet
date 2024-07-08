@@ -55,7 +55,6 @@
 		80CD94992C3B5E0D007858DE /* libTweetThreadFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD948E2C3B5DFC007858DE /* libTweetThreadFeature.a */; };
 		80CD949A2C3B5E0D007858DE /* libTweetThreadFeatureInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CD94832C3B5DF3007858DE /* libTweetThreadFeatureInterface.a */; };
 		80CD94A02C3B5E86007858DE /* TweetThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD949F2C3B5E86007858DE /* TweetThreadView.swift */; };
-		80CD94A22C3B5EA2007858DE /* TweetThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94A12C3B5EA2007858DE /* TweetThreadViewModel.swift */; };
 		80CD94A62C3B6785007858DE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94A52C3B6785007858DE /* StringExtension.swift */; };
 		80CD94AB2C3B6934007858DE /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94AA2C3B6934007858DE /* Font.swift */; };
 /* End PBXBuildFile section */
@@ -360,7 +359,6 @@
 		80CD948E2C3B5DFC007858DE /* libTweetThreadFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweetThreadFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CD94902C3B5DFC007858DE /* TweetThreadFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetThreadFeature.swift; sourceTree = "<group>"; };
 		80CD949F2C3B5E86007858DE /* TweetThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetThreadView.swift; sourceTree = "<group>"; };
-		80CD94A12C3B5EA2007858DE /* TweetThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetThreadViewModel.swift; sourceTree = "<group>"; };
 		80CD94A52C3B6785007858DE /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		80CD94AA2C3B6934007858DE /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -670,7 +668,6 @@
 			children = (
 				80CD94902C3B5DFC007858DE /* TweetThreadFeature.swift */,
 				80CD949F2C3B5E86007858DE /* TweetThreadView.swift */,
-				80CD94A12C3B5EA2007858DE /* TweetThreadViewModel.swift */,
 			);
 			path = TweetThreadFeature;
 			sourceTree = "<group>";
@@ -1256,7 +1253,6 @@
 			files = (
 				80CD94A02C3B5E86007858DE /* TweetThreadView.swift in Sources */,
 				80CD94912C3B5DFC007858DE /* TweetThreadFeature.swift in Sources */,
-				80CD94A22C3B5EA2007858DE /* TweetThreadViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
