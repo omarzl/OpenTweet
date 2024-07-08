@@ -10,6 +10,7 @@ import Combine
 @testable import NetworkingService
 import NetworkingServiceInterface
 import InjectionService
+import Mocks
 
 final class NetworkingServiceTests: XCTestCase {
     

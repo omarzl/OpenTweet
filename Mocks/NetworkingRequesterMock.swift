@@ -8,11 +8,15 @@
 import Foundation
 @testable import NetworkingService
 
-struct NetworkingRequesterMock: NetworkingRequesting {
+public struct NetworkingRequesterMock: NetworkingRequesting {
     
-    let mock: Codable
+    private let mock: Codable
     
-    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+    public init(mock: Codable) {
+        self.mock = mock
+    }
+    
+    public func data(for request: URLRequest) async throws -> (Data, URLResponse) {
         (
             try JSONEncoder().encode(mock),
             URLResponse(url: URL(filePath: ""), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
