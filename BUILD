@@ -104,6 +104,15 @@ ios_application(
     frameworks = [":InjectionServiceFramework"],
 )
 
+xcodeproj(
+    name = "xcodeproj",
+    project_name = "App",
+    top_level_targets = [
+        top_level_target(":App", target_environments = ["simulator"]),
+        ":UnitTests",
+    ],
+)
+
 # Tests
 
 swift_library(
