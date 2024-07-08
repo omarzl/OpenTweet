@@ -10,12 +10,12 @@ import SwiftData
 
 /// Representation of a tweet
 @Model
-final public class Tweet: Decodable {
+final public class Tweet: Codable {
     /// Unique identifier
     @Attribute(.unique)
     public let id: String
     /// Author handle
-    public let name = Random.randomFakeName()
+    public var name = Random.randomFakeName()
     /// Author handle
     public let author: String
     /// Content of the tweet
@@ -37,6 +37,23 @@ final public class Tweet: Decodable {
         case id, author, content, avatar, date, inReplyTo
     }
     
+    public init(
+        id: String,
+        author: String,
+        content: String,
+        avatar: String?,
+        date: Date,
+        replies: [Tweet]
+    ) {
+        self.id = id
+        self.author = author
+        self.content = content
+        self.avatar = avatar
+        self.date = date
+        self.replies = replies
+        self.name = name
+    }
+    
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
@@ -44,10 +61,26 @@ final public class Tweet: Decodable {
         content = try container.decode(String.self, forKey: .content)
         avatar = try container.decodeIfPresent(String.self, forKey: .avatar)
         let dateString = try container.decode(String.self, forKey: .date)
+        date = Tweet.dateFormatter.date(from: dateString) ?? Date()
+        inReplyTo = try container.decodeIfPresent(String.self, forKey: .inReplyTo)
+    }
+    
+    public func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(author, forKey: .author)
+        try container.encode(content, forKey: .content)
+        try container.encode(avatar, forKey: .avatar)
+        try container.encode(Tweet.dateFormatter.string(from: date), forKey: .date)
+        try container.encode(inReplyTo, forKey: .inReplyTo)
+    }
+}
+
+extension Tweet {
+    static var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        date = formatter.date(from: dateString) ?? Date()
-        inReplyTo = try container.decodeIfPresent(String.self, forKey: .inReplyTo)
+        return formatter
     }
 }
