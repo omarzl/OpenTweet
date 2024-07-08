@@ -17,6 +17,12 @@ import TweetFoundation
 
 struct Registrables {
     func register() {
+        #if DEBUG
+        // Prevents registering production registrables during tests
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+            return
+        }
+        #endif
         InjectionServiceImpl.instance.register(registrable: Networking.self) {
             NetworkingServiceImpl()
         }
