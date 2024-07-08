@@ -90,7 +90,7 @@ private extension TweetView {
     @ViewBuilder
     func contentViewFor(tweet: Tweet) -> some View {
         
-        Text(.init(replaceURL(from: tweet.content)))
+        Text(.init(tweet.content.replaceURL().replaceHandle()))
             .font(.body)
             .frame(maxWidth: .infinity, alignment: .leading)
         
@@ -107,19 +107,6 @@ private extension TweetView {
             generateIconAndText(named: "heart")
             generateIconAndText(named: "bookmark")
         }
-    }
-    
-    func replaceURL(from text: String) -> String {
-        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else { return text }
-        var text = text
-        let matches = detector.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
-
-        for match in matches {
-            guard let range = Range(match.range, in: text) else { continue }
-            let url = text[range]
-            text.replaceSubrange(range, with: "[\(url)](\(url))")
-        }
-        return text
     }
     
     @ViewBuilder
