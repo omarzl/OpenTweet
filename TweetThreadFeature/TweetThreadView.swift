@@ -24,12 +24,37 @@ struct TweetThreadView: View {
             TweetView(tweet: tweet)
                 .modifier(SeparatorModifier())
             
+            if !tweet.replies.isEmpty {
+                Text("Replies")
+                    .font(.footnote)
+            }
+            
             ForEach(tweet.replies) { tweet in
-                TweetView(tweet: tweet)
+                ZStack {
+                    NavigationLink {
+                        TweetThreadView(tweet: tweet)
+                    } label: {
+                        EmptyView()
+                    }.opacity(0.0)
+                    TweetView(tweet: tweet)
+                }
             }
             .modifier(SeparatorModifier())
+            
+            footLabel
         }
         .modifier(ListModifier())
         .navigationTitle(tweet.author)
+    }
+    
+    
+    @ViewBuilder
+    var footLabel: some View {
+        if tweet.replies.isEmpty {
+            Text("No replies.")
+                .font(.caption)
+                .frame(maxWidth: .infinity)
+                .listRowSeparator(.hidden)
+        }
     }
 }

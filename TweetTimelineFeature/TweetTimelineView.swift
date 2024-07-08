@@ -22,13 +22,16 @@ struct TweetTimelineView: View {
         NavigationView {
             List {
                 ForEach(viewModel.tweets) { tweet in
-                    NavigationLink {
-                        @Inject
-                        var threadFeature: (any TweetThreadFeatureInterface)?
-                        if let threadFeature {
-                            AnyView(threadFeature.viewFor(tweet: tweet))
-                        }
-                    } label: {
+                    ZStack {
+                        NavigationLink {
+                            @Inject
+                            var threadFeature: (any TweetThreadFeatureInterface)?
+                            if let threadFeature {
+                                AnyView(threadFeature.viewFor(tweet: tweet))
+                            }
+                        } label: {
+                            EmptyView()
+                        }.opacity(0.0)
                         TweetView(tweet: tweet)
                     }
                 }
