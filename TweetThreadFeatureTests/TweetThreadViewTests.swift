@@ -1,20 +1,20 @@
 //
-//  TweetTimelineViewTests.swift
-//  TweetTimelineFeatureTests
+//  TweetThreadViewTests.swift
+//  TweetThreadFeatureTests
 //
 //  Created by Omar Zúñiga Lagunas on 08/07/24.
 //
 
 import XCTest
-@testable import TweetTimelineFeature
 import SnapshotTesting
-import Mocks
-import TweetFoundation
-import InjectionService
 import SwiftUI
+import Mocks
+import InjectionService
+import TweetFoundation
+@testable import TweetThreadFeature
 
-final class TweetTimelineViewTests: XCTestCase {
-
+final class TweetThreadFeatureTests: XCTestCase {
+    
     private var containerMock = ModelContainerMock()
     
     override func setUp() {
@@ -27,24 +27,23 @@ final class TweetTimelineViewTests: XCTestCase {
     }
     
     @MainActor
-    func testView() async {
+    func testView() {
         // given
-        let viewModel = TweetTimelineViewModel()
-        // when
-        containerMock.container.mainContext.insert(
-            Tweet(id: "1", name: "Michael Scott", author: "test", content: "hey",
-                  avatar: nil, date: Date(timeIntervalSince1970: 0), replies: [])
-        )
-        containerMock.container.mainContext.insert(
-            Tweet(id: "2", name: "Michael Scott", author: "test2", content: """
+        let reply = Tweet(id: "2", name: "Example", author: "test", content: "sdfsdf",
+                          avatar: nil, date: Date(timeIntervalSince1970: 0), replies: [])
+        containerMock.container.mainContext.insert(reply)
+        
+        let tweet = Tweet(id: "1", name: "Michael Scott", author: "test", content: """
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                """, avatar: nil, date: Date(timeIntervalSince1970: 10), replies: [])
-        )
-        await viewModel.refresh()
+                """, avatar: nil, date: Date(timeIntervalSince1970: 0), replies: [
+                    reply
+                ])
+        containerMock.container.mainContext.insert(tweet)
+        
+        let view = TweetThreadView(tweet: tweet)
         // then
-        let view = TweetTimelineView(viewModel: viewModel)
         assertSnapshot(of: view, as: .image(layout: .device(config: .iPhone12)))
     }
 }

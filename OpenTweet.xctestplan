@@ -46,6 +46,13 @@
         "identifier" : "80C6A79A2C3C440B0070E978",
         "name" : "TweetTimelineFeatureTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:OpenTweet.xcodeproj",
+        "identifier" : "807AAF6F2C3C81A80051E876",
+        "name" : "TweetThreadFeatureTests"
+      }
     }
   ],
   "version" : 1
