@@ -26,7 +26,7 @@ struct TweetThreadView: View {
             
             if !tweet.replies.isEmpty {
                 Text("Replies")
-                    .font(.footnote)
+                    .font(.otFootnote)
             }
             
             ForEach(tweet.replies) { tweet in
@@ -52,9 +52,10 @@ struct TweetThreadView: View {
     var footLabel: some View {
         if tweet.replies.isEmpty {
             Text("No replies.")
-                .font(.caption)
+                .font(.otCaption)
                 .frame(maxWidth: .infinity)
                 .listRowSeparator(.hidden)
         }
     }
 }
+    

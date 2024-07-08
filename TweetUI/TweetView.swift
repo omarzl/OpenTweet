@@ -65,7 +65,7 @@ private extension TweetView {
     @ViewBuilder
     func authorViewFor(tweet: Tweet) -> some View {
         Text(tweet.name)
-            .font(.caption)
+            .font(.otCaption)
             .bold()
         
         AsyncImage(
@@ -81,7 +81,7 @@ private extension TweetView {
             })
         
         Text(tweet.author)
-            .font(.caption2)
+            .font(.otCaption2)
             .lineLimit(1)
         
         Spacer()
@@ -91,7 +91,7 @@ private extension TweetView {
     func contentViewFor(tweet: Tweet) -> some View {
         
         Text(.init(tweet.content.replaceURL().replaceHandle()))
-            .font(.body)
+            .font(.otBody)
             .frame(maxWidth: .infinity, alignment: .leading)
         
         Spacer()
@@ -99,7 +99,7 @@ private extension TweetView {
         
         HStack {
             Text(OTDateFormatter.relative.localizedString(for: tweet.date, relativeTo: Date.now))
-                .font(.caption2)
+                .font(.otCaption2)
             
             Spacer()
             
@@ -117,7 +117,7 @@ private extension TweetView {
                 .foregroundColor(.gray)
             
             Text("\(Int.random(in: 0..<1000))")
-                .font(.caption2)
+                .font(.otCaption2)
         }
     }
 }

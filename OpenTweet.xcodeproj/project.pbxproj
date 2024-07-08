@@ -57,6 +57,7 @@
 		80CD94A02C3B5E86007858DE /* TweetThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD949F2C3B5E86007858DE /* TweetThreadView.swift */; };
 		80CD94A22C3B5EA2007858DE /* TweetThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94A12C3B5EA2007858DE /* TweetThreadViewModel.swift */; };
 		80CD94A62C3B6785007858DE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94A52C3B6785007858DE /* StringExtension.swift */; };
+		80CD94AB2C3B6934007858DE /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD94AA2C3B6934007858DE /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +222,13 @@
 			remoteGlobalIDString = 80CD94282C3B1B36007858DE;
 			remoteInfo = TweetFoundation;
 		};
+		80CD94AC2C3B6A63007858DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807629C82C3A02DC007C91ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CD946A2C3B5B4C007858DE;
+			remoteInfo = TweetUI;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -353,6 +361,7 @@
 		80CD949F2C3B5E86007858DE /* TweetThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetThreadView.swift; sourceTree = "<group>"; };
 		80CD94A12C3B5EA2007858DE /* TweetThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetThreadViewModel.swift; sourceTree = "<group>"; };
 		80CD94A52C3B6785007858DE /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		80CD94AA2C3B6934007858DE /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -638,6 +647,7 @@
 			isa = PBXGroup;
 			children = (
 				80CD946D2C3B5B4C007858DE /* TweetView.swift */,
+				80CD94AA2C3B6934007858DE /* Font.swift */,
 				80CD94A52C3B6785007858DE /* StringExtension.swift */,
 				80CD947A2C3B5C3F007858DE /* ViewModifiers.swift */,
 				80CD94782C3B5C22007858DE /* OTDateFormatter.swift */,
@@ -940,6 +950,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				80CD94AD2C3B6A63007858DE /* PBXTargetDependency */,
 				80CD949E2C3B5E64007858DE /* PBXTargetDependency */,
 			);
 			name = TweetThreadFeature;
@@ -1200,6 +1211,7 @@
 			files = (
 				80CD94A62C3B6785007858DE /* StringExtension.swift in Sources */,
 				80CD947B2C3B5C3F007858DE /* ViewModifiers.swift in Sources */,
+				80CD94AB2C3B6934007858DE /* Font.swift in Sources */,
 				80CD946E2C3B5B4C007858DE /* TweetView.swift in Sources */,
 				80CD94792C3B5C22007858DE /* OTDateFormatter.swift in Sources */,
 			);
@@ -1341,6 +1353,11 @@
 			isa = PBXTargetDependency;
 			target = 80CD94282C3B1B36007858DE /* TweetFoundation */;
 			targetProxy = 80CD94A32C3B5ECD007858DE /* PBXContainerItemProxy */;
+		};
+		80CD94AD2C3B6A63007858DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CD946A2C3B5B4C007858DE /* TweetUI */;
+			targetProxy = 80CD94AC2C3B6A63007858DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

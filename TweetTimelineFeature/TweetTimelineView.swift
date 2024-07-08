@@ -50,8 +50,8 @@ struct TweetTimelineView: View {
     
     @ViewBuilder
     var footLabel: some View {
-        Text(viewModel.tweets.isEmpty ? "Loading..." : "You are up to date!")
-            .font(.caption)
+        Text(viewModel.tweets.isEmpty ? "Loading..." : "You are up to date! 🎉")
+            .font(.otCaption)
             .frame(maxWidth: .infinity)
             .listRowSeparator(.hidden)
     }
