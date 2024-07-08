@@ -15,7 +15,7 @@ final class OpenTweetModelContainer: OTModelContainer {
     
     let container: ModelContainer = {
         let schema = Schema([
-            Tweet.self,
+            Tweet.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         

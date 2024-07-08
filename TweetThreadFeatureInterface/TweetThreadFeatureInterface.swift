@@ -9,6 +9,6 @@ import SwiftUI
 import TweetFoundation
 
 public protocol TweetThreadFeatureInterface {
-    associatedtype V: View
-    func viewFor(tweet: Tweet) -> V
+    associatedtype ViewType: View
+    func viewFor(tweet: Tweet) -> ViewType
 }

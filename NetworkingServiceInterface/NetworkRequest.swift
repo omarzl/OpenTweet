@@ -21,27 +21,25 @@ import InjectionService
     // MARK: - Public properties
     
     public var wrappedValue: AnyPublisher<Model, any Error> {
-        get {
-            Deferred {
-                Future { future in
-                    @Inject
-                    var service: (any Networking)?
-                    guard let service else {
-                        future(.failure(InjectionError.unregistered(type: Networking.self)))
-                        return
-                    }
-                    Task {
-                        do {
-                            let model: Model = try await service.get(from: url)
-                            future(.success(model))
-                        } catch {
-                            future(.failure(error))
-                        }
+        Deferred {
+            Future { future in
+                @Inject
+                var service: (any Networking)?
+                guard let service else {
+                    future(.failure(InjectionError.unregistered(type: Networking.self)))
+                    return
+                }
+                Task {
+                    do {
+                        let model: Model = try await service.get(from: url)
+                        future(.success(model))
+                    } catch {
+                        future(.failure(error))
                     }
                 }
             }
-            .eraseToAnyPublisher()
         }
+        .eraseToAnyPublisher()
     }
     
     // MARK: - Private properties

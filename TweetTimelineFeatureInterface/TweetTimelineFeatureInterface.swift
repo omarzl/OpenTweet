@@ -8,6 +8,6 @@
 import SwiftUI
 
 public protocol TweetTimelineFeatureInterface {
-    associatedtype V: View
-    func view() -> V
+    associatedtype ViewType: View
+    func view() -> ViewType
 }

@@ -19,7 +19,7 @@ struct OpenTweetApp: App {
     init() {
         Registrables().register()
     }
-
+    
     var body: some Scene {
         WindowGroup {
             if let view = timelineFeature?.view() {

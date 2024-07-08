@@ -17,9 +17,7 @@ import Foundation
 @propertyWrapper public struct Inject<Registrable> {
     /// The type of the object to which it should be resolved
     public var wrappedValue: Registrable? {
-        get {
-            InjectionServiceImpl.instance.resolve(registrable: Registrable.self)
-        }
+        InjectionServiceImpl.instance.resolve(registrable: Registrable.self)
     }
     
     public init() {}

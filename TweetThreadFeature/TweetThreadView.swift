@@ -47,7 +47,6 @@ struct TweetThreadView: View {
         .navigationTitle(tweet.author)
     }
     
-    
     @ViewBuilder
     var footLabel: some View {
         if tweet.replies.isEmpty {
@@ -58,4 +57,3 @@ struct TweetThreadView: View {
         }
     }
 }
-    

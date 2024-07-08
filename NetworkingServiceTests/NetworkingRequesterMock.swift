@@ -12,10 +12,6 @@ struct NetworkingRequesterMock: NetworkingRequesting {
     
     let mock: Codable
     
-    init(mock: Codable) {
-        self.mock = mock
-    }
-    
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
         (
             try JSONEncoder().encode(mock),
