@@ -39,6 +39,7 @@ final public class Tweet: Codable {
     
     public init(
         id: String,
+        name: String,
         author: String,
         content: String,
         avatar: String?,

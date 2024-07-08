@@ -37,7 +37,7 @@ final class TweetTimelineFeatureTests: XCTestCase {
     func testTweetsLoadingExpectSuccess() {
         let expectation = expectation(description: "Tweets should be loaded")
         // given
-        let tweet = Tweet(id: "1", author: "test", content: "hello", avatar: nil, date: .now, replies: [])
+        let tweet = Tweet(id: "1", name: "", author: "test", content: "hey", avatar: nil, date: .now, replies: [])
         let timeline = Timeline(tweets: [tweet])
         let viewModel = TweetTimelineViewModel()
         // when
@@ -49,7 +49,9 @@ final class TweetTimelineFeatureTests: XCTestCase {
             if tweets.first?.id == tweet.id { expectation.fulfill() }
         }.store(in: &cancellables)
         
-        viewModel.refresh()
+        Task {
+            await viewModel.refresh()
+        }
         // then
         waitForExpectations(timeout: 0.1)
     }

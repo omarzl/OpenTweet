@@ -30,13 +30,12 @@ final class TweetTimelineViewModel: ObservableObject {
     private var modelContainer: OTModelContainer?
     
     /// Loads the data from the storage or from the API
-    func refresh() {
-        Task { @MainActor in
-            await loadTweets()
-            // If they are saved, we are not getting them from the API
-            guard tweets.isEmpty else { return }
-            getTweets()
-        }
+    @MainActor
+    func refresh() async {
+        await loadTweets()
+        // If they are saved, we are not getting them from the API
+        guard tweets.isEmpty else { return }
+        getTweets()
     }
 }
 
@@ -72,7 +71,10 @@ private extension TweetTimelineViewModel {
     func loadTweets() async {
         guard let modelContainer else { return logger.error("There is no model container") }
         do {
-            let descriptor = FetchDescriptor(predicate: #Predicate<Tweet> { $0.parent == nil })
+            let descriptor = FetchDescriptor(
+                predicate: #Predicate<Tweet> { $0.parent == nil },
+                sortBy: [SortDescriptor(\Tweet.date)]
+            )
             tweets = try modelContainer.container.mainContext.fetch(descriptor)
         } catch {
             logger.error("Error loading tweets: \(error)")

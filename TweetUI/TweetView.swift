@@ -118,7 +118,7 @@ private extension TweetView {
                 .renderingMode(.template)
                 .foregroundColor(.gray)
             
-            Text("\(Int.random(in: 0..<1000))")
+            Text("\(isTesting ? 100 : Int.random(in: 0..<1000))")
                 .font(.otCaption2)
         }
     }

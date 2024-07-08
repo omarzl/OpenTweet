@@ -16,7 +16,11 @@ import InjectionService
 struct TweetTimelineView: View {
     
     @StateObject
-    private var viewModel = TweetTimelineViewModel()
+    private var viewModel: TweetTimelineViewModel
+    
+    init(viewModel: TweetTimelineViewModel = TweetTimelineViewModel()) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationView {
@@ -44,7 +48,9 @@ struct TweetTimelineView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear {
-            viewModel.refresh()
+            Task {
+                await viewModel.refresh()
+            }
         }
     }
     

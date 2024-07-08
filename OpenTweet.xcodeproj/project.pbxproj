@@ -368,6 +368,8 @@
 		807629E72C3A02DD007C91ED /* OpenTweetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetTests.swift; sourceTree = "<group>"; };
 		807629ED2C3A02DD007C91ED /* OpenTweetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTweetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		807629F12C3A02DD007C91ED /* OpenTweetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetUITests.swift; sourceTree = "<group>"; };
+		807AAF602C3C767C0051E876 /* TweetTimelineViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineViewTests.swift; sourceTree = "<group>"; };
+		807AAF692C3C7E3E0051E876 /* RunningInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInfo.swift; sourceTree = "<group>"; };
 		80C6A7862C3B729C0070E978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		80C6A79B2C3C440B0070E978 /* TweetTimelineFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetTimelineFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C6A79D2C3C440B0070E978 /* TweetTimelineFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTimelineFeatureTests.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				807AAF5F2C3C75AF0051E876 /* SnapshotTesting in Frameworks */,
 				80C6A7C32C3C4A1B0070E978 /* libNetworkingServiceInterface.a in Frameworks */,
 				80C6A7C22C3C4A140070E978 /* libTweetFoundation.a in Frameworks */,
 				80C6A7C02C3C4A060070E978 /* libMocks.a in Frameworks */,
@@ -646,6 +649,7 @@
 			isa = PBXGroup;
 			children = (
 				80C6A79D2C3C440B0070E978 /* TweetTimelineFeatureTests.swift */,
+				807AAF602C3C767C0051E876 /* TweetTimelineViewTests.swift */,
 			);
 			path = TweetTimelineFeatureTests;
 			sourceTree = "<group>";
@@ -868,10 +872,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				807AAF632C3C77790051E876 /* PBXTargetDependency */,
 				80C6A7BF2C3C49FA0070E978 /* PBXTargetDependency */,
 				80C6A7BD2C3C49F60070E978 /* PBXTargetDependency */,
 			);
 			name = TweetTimelineFeatureTests;
+			packageProductDependencies = (
+				807AAF5E2C3C75AF0051E876 /* SnapshotTesting */,
+			);
 			productName = TweetTimelineFeatureTests;
 			productReference = 80C6A79B2C3C440B0070E978 /* TweetTimelineFeatureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1168,6 +1176,9 @@
 				Base,
 			);
 			mainGroup = 807629C72C3A02DC007C91ED;
+			packageReferences = (
+				807AAF5D2C3C75AF0051E876 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 807629D12C3A02DC007C91ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1307,6 +1318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80C6A79E2C3C440B0070E978 /* TweetTimelineFeatureTests.swift in Sources */,
+				807AAF612C3C767C0051E876 /* TweetTimelineViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1438,6 +1450,10 @@
 			isa = PBXTargetDependency;
 			target = 807629CF2C3A02DC007C91ED /* OpenTweet */;
 			targetProxy = 807629EE2C3A02DD007C91ED /* PBXContainerItemProxy */;
+		};
+		807AAF632C3C77790051E876 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 807AAF622C3C77790051E876 /* SnapshotTesting */;
 		};
 		80C6A7B22C3C48330070E978 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2529,6 +2545,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		807AAF5D2C3C75AF0051E876 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		807AAF5E2C3C75AF0051E876 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 807AAF5D2C3C75AF0051E876 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		807AAF622C3C77790051E876 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 807AAF5D2C3C75AF0051E876 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 807629C82C3A02DC007C91ED /* Project object */;
 }
