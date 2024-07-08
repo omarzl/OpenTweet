@@ -46,11 +46,20 @@ private extension TweetView {
                         .clipped()
                 },
                 placeholder: {
-                    Color.clear
-                        .frame(width: 40, height: 40)
+                    avatarPlaceholder()
                 })
             .frame(maxHeight: .infinity, alignment: .top)
+        } else {
+            avatarPlaceholder()
         }
+    }
+    
+    @ViewBuilder
+    func avatarPlaceholder() -> some View {
+        Image(systemName: "person.circle.fill")
+            .resizable()
+            .frame(width: 40, height: 40)
+            .frame(maxHeight: .infinity, alignment: .top)
     }
     
     @ViewBuilder
@@ -83,6 +92,7 @@ private extension TweetView {
         
         Text(.init(replaceURL(from: tweet.content)))
             .font(.body)
+            .frame(maxWidth: .infinity, alignment: .leading)
         
         Spacer()
             .frame(height: 3)
