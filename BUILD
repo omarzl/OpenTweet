@@ -84,7 +84,7 @@ swift_library(
 # App targets
 
 swift_library(
-    name = "Sources",
+    name = "OpenTweetSources",
     srcs = glob(["OpenTweet/*.swift"]),
     deps = [
         ":TweetTimelineFeature",
@@ -100,6 +100,47 @@ ios_application(
     infoplists = [":OpenTweet/Info.plist"],
     minimum_os_version = "17.5",
     visibility = ["//visibility:public"],
-    deps = [":Sources"],
+    deps = [":OpenTweetSources"],
     frameworks = [":InjectionServiceFramework"],
+)
+
+# Tests
+
+swift_library(
+    name = "InjectionServiceTests",
+    testonly = True,
+    srcs = glob(["InjectionServiceTests/*.swift"]),
+    deps = [
+        ":InjectionService",
+    ],
+)
+
+swift_library(
+    name = "NetworkingServiceTests",
+    testonly = True,
+    srcs = glob(["NetworkingServiceTests/*.swift"]),
+    deps = [
+        ":NetworkingService",
+    ],
+)
+
+swift_library(
+    name = "OpenTweetTests",
+    testonly = True,
+    srcs = glob(["OpenTweetTests/*.swift"]),
+    deps = [
+        ":OpenTweetSources",
+    ],
+)
+
+ios_unit_test(
+    name = "UnitTests",
+    minimum_os_version = "17.5",
+    deps = [
+        ":InjectionServiceTests",
+        ":NetworkingServiceTests",
+        ":OpenTweetTests",
+    ],
+    platform_type = "ios",
+    visibility = ["//visibility:public"],
 )
