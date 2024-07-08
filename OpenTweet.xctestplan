@@ -39,6 +39,13 @@
         "identifier" : "80CD93ED2C3A1500007858DE",
         "name" : "InjectionServiceTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:OpenTweet.xcodeproj",
+        "identifier" : "80C6A79A2C3C440B0070E978",
+        "name" : "TweetTimelineFeatureTests"
+      }
     }
   ],
   "version" : 1

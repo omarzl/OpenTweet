@@ -82,6 +82,17 @@
                ReferencedContainer = "container:OpenTweet.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "80C6A79A2C3C440B0070E978"
+               BuildableName = "TweetTimelineFeatureTests.xctest"
+               BlueprintName = "TweetTimelineFeatureTests"
+               ReferencedContainer = "container:OpenTweet.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
