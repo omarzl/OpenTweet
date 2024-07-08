@@ -14,15 +14,11 @@ import TweetTimelineFeatureInterface
 import TweetThreadFeature
 import TweetThreadFeatureInterface
 import TweetFoundation
+import TweetUI
 
 struct Registrables {
     func register() {
-        #if DEBUG
-        // Prevents registering production registrables during tests
-        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
-            return
-        }
-        #endif
+        if isTesting { return }
         InjectionServiceImpl.instance.register(registrable: Networking.self) {
             NetworkingServiceImpl()
         }
