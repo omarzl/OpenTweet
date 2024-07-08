@@ -32,6 +32,8 @@ public struct TweetView: View {
     }
 }
 
+// MARK: - Internal UI methods
+
 private extension TweetView {
     @ViewBuilder
     func avatarViewFor(tweet: Tweet) -> some View {
