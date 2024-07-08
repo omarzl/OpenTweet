@@ -11,6 +11,7 @@ import SwiftData
 import TweetFoundation
 import NetworkingServiceInterface
 import InjectionService
+import OSLog
 
 final class TweetTimelineViewModel: ObservableObject {
     
@@ -21,6 +22,7 @@ final class TweetTimelineViewModel: ObservableObject {
     
     // MARK: - Private properties
     
+    private var logger = Logger()
     private var cancellables = Set<AnyCancellable>()
     @NetworkRequest(url: "\(Endpoint.base)/opentweet")
     private var request: AnyPublisher<Timeline, any Error>
@@ -40,9 +42,9 @@ final class TweetTimelineViewModel: ObservableObject {
 
 private extension TweetTimelineViewModel {
     func getTweets() {
-        request.sink { result in
+        request.sink { [weak self] result in
             if case let .failure(error) = result {
-                print(error)
+                self?.logger.error("Error requesting tweets: \(error)")
             }
         } receiveValue: { [weak self] timeline in
             guard let self else { return }
@@ -68,11 +70,12 @@ private extension TweetTimelineViewModel {
     
     @MainActor
     func loadTweets() async {
-        guard let modelContainer else { return }
+        guard let modelContainer else { return logger.error("There is no model container") }
         do {
             let descriptor = FetchDescriptor(predicate: #Predicate<Tweet> { $0.parent == nil })
             tweets = try modelContainer.container.mainContext.fetch(descriptor)
         } catch {
+            logger.error("Error loading tweets: \(error)")
         }
     }
 }
