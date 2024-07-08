@@ -130,6 +130,7 @@ swift_library(
     srcs = glob(["NetworkingServiceTests/*.swift"]),
     deps = [
         ":NetworkingService",
+        ":Mocks",
     ],
 )
 
@@ -139,6 +140,14 @@ swift_library(
     srcs = glob(["OpenTweetTests/*.swift"]),
     deps = [
         ":OpenTweetSources",
+    ],
+)
+
+swift_library(
+    name = "Mocks",
+    srcs = glob(["Mocks/*.swift"]),
+    deps= [
+        ":TweetFoundation",
     ],
 )
 
