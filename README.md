@@ -1,6 +1,8 @@
 OpenTweet
 =========
 
+This project was developed and tested using Xcode 15.4 and Swift 5.10
+
 ## System Design
 
 The following image explains the overall architecture of the app.
